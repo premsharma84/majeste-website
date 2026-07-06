@@ -5,10 +5,10 @@
 #   1. Create a GitHub OAuth App:
 #      GitHub → Settings → Developer settings → OAuth Apps → New OAuth App
 #        - Application name: APS MAJESTE Admin
-#        - Homepage URL: https://<your-username>.github.io/<repo>/
-#        - Authorization callback URL: https://<your-username>.github.io/<repo>/admin/
+#        - Homepage URL: https://apsmajeste.github.io/
+#        - Authorization callback URL: https://apsmajeste.github.io/admin/
 #   2. Copy the Client ID and paste it below as `app_id`.
-#   3. Set `repo` to your GitHub repo path (e.g. "your-username/apsmajeste").
+#   3. Set `repo` to your GitHub repo path.
 #   4. Visit /admin/ and sign in with GitHub.
 #
 # How saves work:
@@ -19,15 +19,15 @@
 
 backend:
   name: github
-  repo: your-username/apsmajeste           # ← CHANGE THIS to your repo
+  repo: apsmajeste/apsmajeste.github.io
   branch: main
   base_url: https://github.com
   auth_endpoint: login/oauth/authorize
-  app_id: Iv1.xxxxxxxxxxxxxxxx             # ← CHANGE THIS to your OAuth App Client ID
+  app_id: Ov23liYTkEGWOA2tnMM5            # ← PASTE YOUR OAuth App Client ID HERE
   auth_type: pkce                          # PKCE = no proxy server needed
 
 # Site URL used for canonical links in the CMS UI
-site_url: https://your-username.github.io/apsmajeste  # ← CHANGE THIS
+site_url: https://apsmajeste.github.io
 
 # Show a publish/preview workflow
 publish_mode: editorial_workflow
