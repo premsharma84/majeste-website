@@ -1,0 +1,9 @@
+# robots.txt — APS MAJESTE Maison
+# https://apsmajeste.example.com
+
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Sitemap location
+Sitemap: https://apsmajeste.example.com/sitemap.xml

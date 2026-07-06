@@ -1,0 +1,116 @@
+/* ============================================================
+   APS MAJESTE — Design Tokens
+   Premium skincare & fragrance brand visual language
+   ============================================================ */
+
+:root {
+  /* ---- Color: Light theme (default) ---- */
+  --color-bg: #faf7f2;            /* warm ivory */
+  --color-surface: #ffffff;        /* card surface */
+  --color-surface-alt: #f2ede4;    /* subtle section break */
+  --color-bg-dark: #1a1614;        /* espresso (dark sections) */
+  --color-surface-dark: #221d19;   /* dark section card */
+  --color-surface-dark-alt: #2a2420;
+
+  --color-text: #1a1614;           /* primary text on light */
+  --color-text-muted: #6b6258;     /* secondary text on light */
+  --color-text-soft: #8a8074;      /* tertiary text */
+  --color-text-inverse: #faf7f2;   /* text on dark */
+  --color-text-inverse-muted: #b3a99a;
+
+  --color-accent: #b8935a;         /* muted gold */
+  --color-accent-hover: #a07e4a;
+  --color-accent-soft: #d9c4a0;
+
+  --color-border: #e5ddd0;
+  --color-border-dark: #3a322c;
+
+  --color-success: #5a7a4f;
+  --color-error: #a04a3a;
+
+  /* ---- Typography ---- */
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* font sizes (fluid) */
+  --fs-display: clamp(2.75rem, 6vw, 5rem);
+  --fs-h1: clamp(2.25rem, 4.5vw, 3.5rem);
+  --fs-h2: clamp(1.75rem, 3.2vw, 2.5rem);
+  --fs-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --fs-h4: clamp(1.125rem, 1.4vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-body-lg: 1.125rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  /* line heights */
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.75;
+
+  /* letter spacing */
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.08em;
+  --ls-wider: 0.18em;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* ---- Layout ---- */
+  --container-max: 1280px;
+  --container-narrow: 760px;
+  --container-wide: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Effects ---- */
+  --shadow-sm: 0 1px 2px rgba(26, 22, 20, 0.05);
+  --shadow-md: 0 4px 12px rgba(26, 22, 20, 0.08);
+  --shadow-lg: 0 16px 40px rgba(26, 22, 20, 0.12);
+  --shadow-gold: 0 8px 24px rgba(184, 147, 90, 0.18);
+
+  --transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 480ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+
+  --header-height: 72px;
+}
+
+/* Dark section helper — applied to <section class="dark"> */
+.dark,
+.dark-surface {
+  --color-bg: #1a1614;
+  --color-surface: #221d19;
+  --color-surface-alt: #2a2420;
+  --color-text: #faf7f2;
+  --color-text-muted: #b3a99a;
+  --color-text-soft: #8a8074;
+  --color-border: #3a322c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

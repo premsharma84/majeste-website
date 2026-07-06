@@ -1,0 +1,8 @@
+/* ============================================================
+   APS MAJESTE — Main stylesheet entry
+   Order matters: tokens → base → components → utilities
+   ============================================================ */
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './utilities.css';
