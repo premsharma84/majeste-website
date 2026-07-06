@@ -21,10 +21,8 @@ backend:
   name: github
   repo: apsmajeste/apsmajeste.github.io
   branch: main
-  base_url: https://github.com
-  auth_endpoint: login/oauth/authorize
-  app_id: Ov23liYTkEGWOA2tnMM5            # ← PASTE YOUR OAuth App Client ID HERE
-  auth_type: pkce                          # PKCE = no proxy server needed
+  app_id: Ov23liYTkEGWOA2tnMM5
+  auth_type: pkce
 
 # Site URL used for canonical links in the CMS UI
 site_url: https://apsmajeste.github.io
