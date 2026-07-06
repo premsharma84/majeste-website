@@ -3,12 +3,13 @@
    ============================================================ */
 
 import { PRODUCTS, CATEGORIES, formatPrice } from '../data/products.js';
+import { url } from './utils.js';
 
 function productCard(p) {
   const tag = p.tag ? `<span class="product-card__tag">${p.tag}</span>` : '';
   return `
     <article class="product-card reveal" data-category="${p.categorySlug}">
-      <a href="/product.html?id=${p.slug}" class="product-card__media" aria-label="${p.name}">
+      <a href="${url('/product.html?id=')}${p.slug}" class="product-card__media" aria-label="${p.name}">
         ${tag}
         <div class="ph product-bg--${p.bg}" aria-hidden="true">
           <span style="font-size:1.1rem;opacity:.55">${p.name.split(' ')[0]}</span>
@@ -16,7 +17,7 @@ function productCard(p) {
       </a>
       <div class="product-card__body">
         <span class="product-card__category">${p.category}</span>
-        <h3 class="product-card__name"><a href="/product.html?id=${p.slug}">${p.name}</a></h3>
+        <h3 class="product-card__name"><a href="${url('/product.html?id=')}${p.slug}">${p.name}</a></h3>
         <p class="product-card__desc">${p.short}</p>
         <div class="product-card__footer">
           <span class="product-card__price">${formatPrice(p.price)}</span>

@@ -4,10 +4,11 @@
 
 import { PRODUCTS, getProduct, formatPrice } from '../data/products.js';
 import { showToast } from './ui.js';
+import { url } from './utils.js';
 
 function getQueryId() {
-  const url = new URL(window.location.href);
-  return url.searchParams.get('id') || '';
+  const parsed = new URL(window.location.href);
+  return parsed.searchParams.get('id') || '';
 }
 
 export function renderProductDetail() {
@@ -99,12 +100,12 @@ export function renderProductDetail() {
       .map(
         (p) => `
         <article class="product-card reveal">
-          <a href="/product.html?id=${p.slug}" class="product-card__media">
+          <a href="${url('/product.html?id=')}${p.slug}" class="product-card__media">
             <div class="ph product-bg--${p.bg}" aria-hidden="true"><span style="font-size:1rem;opacity:.55">${p.name.split(' ')[0]}</span></div>
           </a>
           <div class="product-card__body">
             <span class="product-card__category">${p.category}</span>
-            <h3 class="product-card__name"><a href="/product.html?id=${p.slug}">${p.name}</a></h3>
+            <h3 class="product-card__name"><a href="${url('/product.html?id=')}${p.slug}">${p.name}</a></h3>
             <p class="product-card__desc">${p.short}</p>
             <div class="product-card__footer">
               <span class="product-card__price">${formatPrice(p.price)}</span>

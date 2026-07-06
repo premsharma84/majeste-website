@@ -2,6 +2,8 @@
    APS MAJESTE — Shared site data (brand, nav)
    ============================================================ */
 
+import { url } from '../js/utils.js';
+
 export const SITE = {
   brand: 'APS MAJESTE',
   brandPrefix: 'APS',
@@ -27,30 +29,30 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/about.html', label: 'About' },
-  { href: '/products.html', label: 'Products' },
-  { href: '/why-choose-us.html', label: 'Why APS MAJESTE' },
-  { href: '/contact.html', label: 'Contact' },
+  { href: url('/'), label: 'Home' },
+  { href: url('/about.html'), label: 'About' },
+  { href: url('/products.html'), label: 'Products' },
+  { href: url('/why-choose-us.html'), label: 'Why APS MAJESTE' },
+  { href: url('/contact.html'), label: 'Contact' },
 ];
 
 export const FOOTER_LINKS = {
   shop: [
-    { href: '/products.html', label: 'All Products' },
-    { href: '/products.html#serums', label: 'Serums' },
-    { href: '/products.html#fragrances', label: 'Perfumes' },
-    { href: '/products.html#cleansers', label: 'Face Wash & Cleansers' },
+    { href: url('/products.html'), label: 'All Products' },
+    { href: url('/products.html#serums'), label: 'Serums' },
+    { href: url('/products.html#fragrances'), label: 'Perfumes' },
+    { href: url('/products.html#cleansers'), label: 'Face Wash & Cleansers' },
   ],
   company: [
-    { href: '/about.html', label: 'Our Story' },
-    { href: '/why-choose-us.html', label: 'Why APS MAJESTE' },
-    { href: '/contact.html', label: 'Contact' },
-    { href: '/products.html', label: 'Shop All' },
+    { href: url('/about.html'), label: 'Our Story' },
+    { href: url('/why-choose-us.html'), label: 'Why APS MAJESTE' },
+    { href: url('/contact.html'), label: 'Contact' },
+    { href: url('/products.html'), label: 'Shop All' },
   ],
   legal: [
-    { href: '/privacy-policy.html', label: 'Privacy Policy' },
-    { href: '/terms.html', label: 'Terms & Conditions' },
-    { href: '/contact.html', label: 'Customer Care' },
-    { href: '/admin/', label: 'Admin' },
+    { href: url('/privacy-policy.html'), label: 'Privacy Policy' },
+    { href: url('/terms.html'), label: 'Terms & Conditions' },
+    { href: url('/contact.html'), label: 'Customer Care' },
+    { href: url('/admin/'), label: 'Admin' },
   ],
 };

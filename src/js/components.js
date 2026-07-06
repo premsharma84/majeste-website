@@ -5,6 +5,7 @@
    ============================================================ */
 
 import { SITE, NAV_LINKS, FOOTER_LINKS } from '../data/site.js';
+import { url } from './utils.js';
 
 /* ---------- Icons ---------- */
 const ICONS = {
@@ -50,7 +51,7 @@ function renderHeader() {
     <a href="#main" class="skip-link">Skip to content</a>
     <header class="site-header" data-site-header>
       <div class="container site-header__inner">
-        <a href="/" class="brand" aria-label="${SITE.brand} home">
+        <a href="${url('/')}" class="brand" aria-label="${SITE.brand} home">
           <span class="brand__prefix">${SITE.brandPrefix}</span>
           <span class="brand__main">${SITE.brandMain}</span>
         </a>
@@ -58,7 +59,7 @@ function renderHeader() {
           <ul>${navItems}</ul>
         </nav>
         <div class="header__actions">
-          <a href="/products.html" class="btn btn--primary hide-mobile">Shop</a>
+          <a href="${url('/products.html')}" class="btn btn--primary hide-mobile">Shop</a>
           <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
             <span></span><span></span><span></span>
           </button>
@@ -68,7 +69,7 @@ function renderHeader() {
         <ul>
           ${NAV_LINKS.map((l) => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}
         </ul>
-        <a href="/products.html" class="btn btn--primary btn--block">Shop the Collection</a>
+        <a href="${url('/products.html')}" class="btn btn--primary btn--block">Shop the Collection</a>
       </div>
     </header>
   `;
@@ -81,7 +82,7 @@ function renderFooter() {
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div>
-          <a href="/" class="footer-brand">
+          <a href="${url('/')}" class="footer-brand">
             <span class="brand__prefix">${SITE.brandPrefix}</span>
             <span class="brand__main">${SITE.brandMain}</span>
           </a>
