@@ -12,17 +12,148 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
 <body>
-  <!--
-    Decap CMS injects its own UI into <div id="nc-root"></div> automatically.
-
-    Setup:
-      1. Create a GitHub OAuth App (see README → Admin section).
-      2. Edit /admin/config.yml and set `repo`, `app_id` (OAuth client ID).
-      3. Visit /admin/ and sign in with GitHub.
-      4. Edit products — every save commits to GitHub and triggers a Pages rebuild.
-  -->
-
   <!-- Decap CMS — must be in <body> so it can initialize after the DOM is ready -->
   <script src="https://unpkg.com/decap-cms@3.6.0/dist/decap-cms.js"></script>
+  <script>
+    // Inline config to bypass config.yml fetch/cache issues
+    window.CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'apsmajeste/apsmajeste.github.io',
+          branch: 'main',
+          app_id: 'Ov23liYTkEGWOA2tnMM5',
+          auth_type: 'pkce'
+        },
+        site_url: 'https://apsmajeste.github.io',
+        publish_mode: 'editorial_workflow',
+        media_folder: 'public/images/uploads',
+        public_folder: '/images/uploads',
+        collections: [
+          {
+            name: 'products',
+            label: 'Products',
+            label_singular: 'Product',
+            folder: 'content/products',
+            format: 'json',
+            extension: 'json',
+            create: true,
+            delete: true,
+            slug: '{{slug}}',
+            summary: '{{name}} · {{category}} · {{size}}',
+            sortable_fields: ['name', 'category'],
+            view_filters: [
+              { label: 'Bestsellers', field: 'tag', pattern: 'Bestseller' },
+              { label: 'New arrivals', field: 'tag', pattern: 'New' },
+              { label: 'Fragrances', field: 'categorySlug', pattern: 'fragrances' }
+            ],
+            fields: [
+              { name: 'name', label: 'Product Name', widget: 'string', hint: 'Full display name, e.g. Rose Damascena Elixir' },
+              { name: 'category', label: 'Category (display)', widget: 'string', hint: 'Human-readable, e.g. Perfume, Face Wash' },
+              {
+                name: 'categorySlug',
+                label: 'Category (filter)',
+                widget: 'select',
+                hint: 'Used by the filter chips on the products page',
+                options: [
+                  { label: 'Perfumes & Fragrances', value: 'fragrances' },
+                  { label: 'Face Wash & Cleansers', value: 'cleansers' }
+                ]
+              },
+              { name: 'size', label: 'Size', widget: 'string', hint: 'e.g. 30 ml, 50 ml, 150 ml' },
+              { name: 'amazonUrl', label: 'Amazon Product URL', widget: 'string', hint: 'Full Amazon listing URL, e.g. https://www.amazon.com/dp/B0XXXXXXXX' },
+              {
+                name: 'tag',
+                label: 'Badge / Tag',
+                widget: 'select',
+                required: false,
+                default: '',
+                options: [
+                  { label: 'None', value: '' },
+                  { label: 'Bestseller', value: 'Bestseller' },
+                  { label: 'New', value: 'New' },
+                  { label: 'Signature', value: 'Signature' }
+                ]
+              },
+              {
+                name: 'bg',
+                label: 'Card color theme',
+                widget: 'select',
+                hint: 'Visual gradient used on the product card and detail page',
+                options: [
+                  { label: 'Rose (pink)', value: 'rose' },
+                  { label: 'Amber (gold)', value: 'amber' },
+                  { label: 'Sage (green)', value: 'sage' },
+                  { label: 'Cream (warm)', value: 'cream' },
+                  { label: 'Noir (dark)', value: 'noir' },
+                  { label: 'Blush (soft pink)', value: 'blush' }
+                ]
+              },
+              { name: 'short', label: 'Short description', widget: 'text', hint: 'One-line summary shown on the product card (max ~160 chars)' },
+              { name: 'description', label: 'Full description', widget: 'text', hint: 'Full marketing copy shown on the product detail page' },
+              {
+                name: 'benefits',
+                label: 'Benefits',
+                widget: 'list',
+                required: true,
+                min: 1,
+                hint: 'One benefit per row. Shown as bullet points on the product detail page.'
+              },
+              {
+                name: 'ingredients',
+                label: 'Key Ingredients',
+                widget: 'list',
+                required: true,
+                min: 1,
+                hint: 'One ingredient per row. Displayed as a comma-separated list.'
+              },
+              { name: 'usage', label: 'How to use', widget: 'text', hint: 'Application instructions shown on the detail page' },
+              {
+                name: 'pairings',
+                label: 'Pairs with',
+                widget: 'relation',
+                collection: 'products',
+                value_field: '{{slug}}',
+                search_fields: ['name'],
+                display_fields: ['name'],
+                multiple: true,
+                required: false,
+                hint: "Select other products that complement this one (shown in the 'Complete your ritual' section)"
+              },
+              { name: 'rating', label: 'Rating (0–5)', widget: 'number', value_type: 'float', min: 0, max: 5, step: 0.1, default: 4.8 },
+              { name: 'reviews', label: 'Review count', widget: 'number', value_type: 'int', min: 0, step: 1, default: 0 },
+              { name: 'image', label: 'Product photo', widget: 'image', required: false, hint: 'Optional — if omitted, a colored gradient placeholder is used' }
+            ]
+          },
+          {
+            name: 'settings',
+            label: 'Site Settings',
+            delete: false,
+            editor: { preview: false },
+            files: [
+              {
+                file: 'content/settings/site.json',
+                name: 'site',
+                label: 'Brand & Contact Info',
+                fields: [
+                  { name: 'brand', label: 'Brand name', widget: 'string' },
+                  { name: 'tagline', label: 'Tagline', widget: 'string' },
+                  { name: 'email', label: 'Contact email', widget: 'string' },
+                  { name: 'phone', label: 'Contact phone', widget: 'string' },
+                  { name: 'addressLine1', label: 'Address line 1', widget: 'string' },
+                  { name: 'addressCity', label: 'City', widget: 'string' },
+                  { name: 'addressRegion', label: 'State / Region', widget: 'string' },
+                  { name: 'addressPostalCode', label: 'Postal code', widget: 'string' },
+                  { name: 'instagramUrl', label: 'Instagram URL', widget: 'string', required: false },
+                  { name: 'pinterestUrl', label: 'Pinterest URL', widget: 'string', required: false },
+                  { name: 'tiktokUrl', label: 'TikTok URL', widget: 'string', required: false }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
