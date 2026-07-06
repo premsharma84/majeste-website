@@ -51,15 +51,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: site/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: site
         run: npm ci
 
       - name: Configure base path
         id: base
-        working-directory: site
         run: |
           # For user/org sites (repo named <user>.github.io), base = "/"
           # For project sites (any other repo name), base = "/<repo-name>/"
@@ -73,7 +71,6 @@ jobs:
           fi
 
       - name: Build with Vite
-        working-directory: site
         env:
           # Pass the computed base path to Vite at build time
           VITE_BASE: ${{ steps.base.outputs.base }}
@@ -82,7 +79,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site/dist
+          path: dist
           name: github-pages
 
   deploy:
