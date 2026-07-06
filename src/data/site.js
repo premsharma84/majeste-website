@@ -12,13 +12,13 @@ export const SITE = {
   tagline: 'Majestic Personal Care, Crafted with Intention',
   domain: 'https://apsmajeste.example.com',
   email: 'concierge@apsmajeste.example.com',
-  phone: '+1 (212) 555-0184',
+  phone: '+91 12345 67890',
   address: {
-    line1: '118 Mercer Street',
-    city: 'New York',
-    region: 'NY',
-    postalCode: '10012',
-    country: 'USA',
+    line1: '123 Lake Palace Road',
+    city: 'Udaipur',
+    region: 'Rajasthan',
+    postalCode: '313001',
+    country: 'India',
   },
   social: {
     instagram: 'https://instagram.com/apsmajeste',
@@ -46,7 +46,7 @@ export const FOOTER_LINKS = {
     { href: url('/about.html'), label: 'Our Story' },
     { href: url('/why-choose-us.html'), label: 'Why APS MAJESTE' },
     { href: url('/contact.html'), label: 'Contact' },
-    { href: url('/products.html'), label: 'Shop All' },
+    { href: url('/products.html'), label: 'View All' },
   ],
   legal: [
     { href: url('/privacy-policy.html'), label: 'Privacy Policy' },

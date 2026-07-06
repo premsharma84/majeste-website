@@ -1,7 +1,7 @@
 {
   "name": "apsmajeste-personal-care",
   "version": "1.0.0",
-  "description": "Premium skincare and fragrance brand website for APS MAJESTE",
+  "description": "Premium perfume and face wash brand website for APS MAJESTE",
   "type": "module",
   "scripts": {
     "dev": "vite",

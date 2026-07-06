@@ -49,8 +49,8 @@ collections:
     create: true
     delete: true
     slug: "{{slug}}"
-    summary: "{{name}} · {{category}} · ${{price}} · {{size}}"
-    sortable_fields: [name, category, price]
+    summary: "{{name}} · {{category}} · {{size}}"
+    sortable_fields: [name, category]
     view_filters:
       - label: "Bestsellers"
         field: tag
@@ -70,14 +70,10 @@ collections:
         widget: "select"
         hint: "Used by the filter chips on the products page"
         options:
-          - { label: "Serums", value: "serums" }
-          - { label: "Facial Oils", value: "oils" }
-          - { label: "Face Wash & Cleansers", value: "cleansers" }
-          - { label: "Moisturizers", value: "moisturizers" }
           - { label: "Perfumes & Fragrances", value: "fragrances" }
-          - { label: "Body", value: "body" }
-      - { name: "price", label: "Price (USD)", widget: "number", value_type: "int", min: 0, step: 1, hint: "Whole dollars, e.g. 128" }
+          - { label: "Face Wash & Cleansers", value: "cleansers" }
       - { name: "size", label: "Size", widget: "string", hint: "e.g. 30 ml, 50 ml, 150 ml" }
+      - { name: "amazonUrl", label: "Amazon Product URL", widget: "string", hint: "Full Amazon listing URL, e.g. https://www.amazon.com/dp/B0XXXXXXXX" }
       - name: "tag"
         label: "Badge / Tag"
         widget: "select"

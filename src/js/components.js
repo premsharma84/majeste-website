@@ -86,7 +86,7 @@ function renderFooter() {
             <span class="brand__prefix">${SITE.brandPrefix}</span>
             <span class="brand__main">${SITE.brandMain}</span>
           </a>
-          <p class="footer-tagline">${SITE.tagline}. Crafted in small batches in Provence and finished in New York.</p>
+          <p class="footer-tagline">${SITE.tagline}. Crafted in small batches in Udaipur, India.</p>
           <form class="footer-newsletter" data-newsletter aria-label="Newsletter signup">
             <label for="footer-email" class="sr-only">Email address</label>
             <input id="footer-email" type="email" name="email" placeholder="Email for ritual notes" required>
@@ -121,7 +121,7 @@ function renderFooter() {
       <div class="container">
         <div class="footer-bottom">
           <span>© ${year} ${SITE.brand} Maison. All rights reserved.</span>
-          <span>Crafted in Provence · Finished in New York</span>
+          <span>Crafted in Udaipur, India</span>
         </div>
       </div>
     </footer>
