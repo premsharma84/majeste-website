@@ -2,8 +2,8 @@
   "name": "Velvet Noir Eau de Parfum",
   "category": "Perfume",
   "categorySlug": "fragrances",
-  "price": 225,
   "size": "50 ml",
+  "amazonUrl": "https://www.amazon.com/dp/B0XXXXXXXX",
   "tag": "New",
   "bg": "noir",
   "short": "A sensual floral-oriental perfume weaving black rose, incense, and vanilla bourbon into an unmistakable signature.",
@@ -23,10 +23,10 @@
     "Vanilla Bourbon Extract",
     "Tonka Bean Absolute"
   ],
-  "usage": "Spritz onto pulse points — wrists, neck, behind the ears — from a distance of 6 inches. Do not rub. Layer over Santal Blush Body Oil for added depth.",
+  "usage": "Spritz onto pulse points — wrists, neck, behind the ears — from a distance of 6 inches. Do not rub. Layer with Amber Oud for added depth.",
   "pairings": [
-    "santal-blush-body-oil",
-    "amber-oud-eau-de-parfum"
+    "amber-oud-eau-de-parfum",
+    "neroli-radiance-face-wash"
   ],
   "rating": 4.9,
   "reviews": 187

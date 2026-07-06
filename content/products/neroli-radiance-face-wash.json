@@ -2,8 +2,8 @@
   "name": "Neroli Radiance Face Wash",
   "category": "Face Wash",
   "categorySlug": "cleansers",
-  "price": 58,
   "size": "150 ml",
+  "amazonUrl": "https://www.amazon.com/dp/B0ZZZZZZZZ",
   "tag": "New",
   "bg": "sage",
   "short": "A gentle gel face wash that lifts impurities and excess oil without stripping, leaving skin balanced and softly luminous.",
@@ -25,8 +25,8 @@
   ],
   "usage": "Massage a pea-sized amount onto damp skin in circular motions for 30 seconds. Rinse thoroughly with lukewarm water. Use morning and evening. Follow with serum and moisturizer.",
   "pairings": [
-    "rose-damascena-elixir",
-    "hydra-veil-moisturizer"
+    "amber-oud-eau-de-parfum",
+    "velvet-noir-eau-de-parfum"
   ],
   "rating": 4.8,
   "reviews": 389

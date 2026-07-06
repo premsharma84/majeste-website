@@ -2,7 +2,7 @@
    APS MAJESTE — Product detail page rendering
    ============================================================ */
 
-import { PRODUCTS, getProduct, formatPrice } from '../data/products.js';
+import { PRODUCTS, getProduct } from '../data/products.js';
 import { showToast } from './ui.js';
 import { url } from './utils.js';
 
@@ -44,18 +44,12 @@ export function renderProductDetail() {
     <div>
       <span class="product-detail__subtitle">${product.category} · ${product.size}</span>
       <h1 class="product-detail__title">${product.name}</h1>
-      <div class="product-detail__price">${formatPrice(product.price)}</div>
       <p class="product-detail__desc">${product.description}</p>
       <ul class="product-detail__list">
         ${product.benefits.map((b) => `<li>${b}</li>`).join('')}
       </ul>
       <div class="product-detail__actions">
-        <div class="product-detail__qty" aria-label="Quantity">
-          <button type="button" data-qty="dec" aria-label="Decrease quantity">−</button>
-          <input type="number" value="1" min="1" max="9" aria-label="Quantity" data-qty-input>
-          <button type="button" data-qty="inc" aria-label="Increase quantity">+</button>
-        </div>
-        <button class="btn btn--primary btn--lg" data-add-to-cart>Add to Bag · ${formatPrice(product.price)}</button>
+        <a href="${product.amazonUrl}" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
       </div>
       <div class="product-detail__tabs">
         <div class="product-detail__tab">
@@ -66,29 +60,17 @@ export function renderProductDetail() {
           <h3>How to Use</h3>
           <p>${product.usage}</p>
         </div>
-        <div class="product-detail__tab">
-          <h3>Shipping & Returns</h3>
-          <p>Complimentary carbon-neutral shipping on orders over $95. 30-day returns on unopened products. Sample sachets available with every order.</p>
-        </div>
       </div>
     </div>
   `;
 
-  // Quantity controls
-  const qtyInput = root.querySelector('[data-qty-input]');
-  root.querySelectorAll('[data-qty]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      let v = parseInt(qtyInput.value, 10) || 1;
-      v = btn.dataset.qty === 'inc' ? Math.min(9, v + 1) : Math.max(1, v - 1);
-      qtyInput.value = v;
+  // Buy on Amazon (external link)
+  const buyBtn = root.querySelector('a[href*="amazon"]');
+  if (buyBtn) {
+    buyBtn.addEventListener('click', () => {
+      showToast(`Opening ${product.name} on Amazon…`);
     });
-  });
-
-  // Add to bag (demo)
-  const addBtn = root.querySelector('[data-add-to-cart]');
-  addBtn.addEventListener('click', () => {
-    showToast(`${product.name} added to your bag.`);
-  });
+  }
 
   // Pairings
   const pairRoot = document.querySelector('[data-product-pairings]');
@@ -108,7 +90,7 @@ export function renderProductDetail() {
             <h3 class="product-card__name"><a href="${url('/product.html?id=')}${p.slug}">${p.name}</a></h3>
             <p class="product-card__desc">${p.short}</p>
             <div class="product-card__footer">
-              <span class="product-card__price">${formatPrice(p.price)}</span>
+              <span class="product-card__cta">View details</span>
             </div>
           </div>
         </article>`
@@ -133,20 +115,20 @@ function injectProductJsonLd(p, slug) {
     productID: slug,
     url: `https://apsmajeste.example.com/product.html?id=${slug}`,
     image: `https://apsmajeste.example.com/images/products/${slug}.jpg`,
-    offers: {
-      '@type': 'Offer',
-      price: p.price,
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-      url: `https://apsmajeste.example.com/product.html?id=${slug}`,
-      seller: { '@type': 'Organization', name: 'APS MAJESTE' },
-    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: p.rating,
       reviewCount: p.reviews,
     },
   };
+  if (p.amazonUrl) {
+    data.offers = {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: p.amazonUrl,
+      seller: { '@type': 'Organization', name: 'Amazon' },
+    };
+  }
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.id = 'product-jsonld';

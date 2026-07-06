@@ -59,7 +59,7 @@ function renderHeader() {
           <ul>${navItems}</ul>
         </nav>
         <div class="header__actions">
-          <a href="${url('/products.html')}" class="btn btn--primary hide-mobile">Shop</a>
+          <a href="${url('/products.html')}" class="btn btn--primary hide-mobile">Collection</a>
           <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
             <span></span><span></span><span></span>
           </button>
@@ -69,7 +69,7 @@ function renderHeader() {
         <ul>
           ${NAV_LINKS.map((l) => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}
         </ul>
-        <a href="${url('/products.html')}" class="btn btn--primary btn--block">Shop the Collection</a>
+        <a href="${url('/products.html')}" class="btn btn--primary btn--block">View the Collection</a>
       </div>
     </header>
   `;

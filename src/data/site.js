@@ -39,9 +39,8 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   shop: [
     { href: url('/products.html'), label: 'All Products' },
-    { href: url('/products.html#serums'), label: 'Serums' },
     { href: url('/products.html#fragrances'), label: 'Perfumes' },
-    { href: url('/products.html#cleansers'), label: 'Face Wash & Cleansers' },
+    { href: url('/products.html#cleansers'), label: 'Face Wash' },
   ],
   company: [
     { href: url('/about.html'), label: 'Our Story' },

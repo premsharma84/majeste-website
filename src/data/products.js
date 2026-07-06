@@ -34,18 +34,11 @@ export const PRODUCTS = Object.entries(productModules)
 
 export const CATEGORIES = [
   { slug: 'all', label: 'All' },
-  { slug: 'serums', label: 'Serums' },
-  { slug: 'oils', label: 'Facial Oils' },
-  { slug: 'cleansers', label: 'Face Wash' },
-  { slug: 'moisturizers', label: 'Moisturizers' },
   { slug: 'fragrances', label: 'Perfumes' },
-  { slug: 'body', label: 'Body' },
+  { slug: 'cleansers', label: 'Face Wash' },
 ];
 
 export function getProduct(slug) {
   return PRODUCTS.find((p) => p.slug === slug) || null;
 }
 
-export function formatPrice(value) {
-  return `$${value.toFixed(0)}`;
-}

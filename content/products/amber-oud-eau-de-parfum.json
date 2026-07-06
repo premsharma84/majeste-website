@@ -2,8 +2,8 @@
   "name": "Amber Oud Eau de Parfum",
   "category": "Perfume",
   "categorySlug": "fragrances",
-  "price": 215,
   "size": "50 ml",
+  "amazonUrl": "https://www.amazon.com/dp/B0YYYYYYYY",
   "tag": "Signature",
   "bg": "noir",
   "short": "A warm, resinous eau de parfum blending oud, amber, and sandalwood for a long-lasting sillage.",
@@ -24,8 +24,8 @@
   ],
   "usage": "Spritz onto pulse points — wrists, neck, behind the ears — from a distance of 6 inches. Do not rub. Reapply as desired.",
   "pairings": [
-    "santal-blush-body-oil",
-    "velvet-noir-eau-de-parfum"
+    "velvet-noir-eau-de-parfum",
+    "neroli-radiance-face-wash"
   ],
   "rating": 4.9,
   "reviews": 312

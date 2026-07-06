@@ -2,7 +2,7 @@
    APS MAJESTE — Products page rendering & filtering
    ============================================================ */
 
-import { PRODUCTS, CATEGORIES, formatPrice } from '../data/products.js';
+import { PRODUCTS, CATEGORIES } from '../data/products.js';
 import { url } from './utils.js';
 
 function productCard(p) {
@@ -20,7 +20,7 @@ function productCard(p) {
         <h3 class="product-card__name"><a href="${url('/product.html?id=')}${p.slug}">${p.name}</a></h3>
         <p class="product-card__desc">${p.short}</p>
         <div class="product-card__footer">
-          <span class="product-card__price">${formatPrice(p.price)}</span>
+          <span class="product-card__cta">View details</span>
           <span class="link-arrow" aria-hidden="true"></span>
         </div>
       </div>
