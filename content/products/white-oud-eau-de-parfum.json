@@ -33,5 +33,6 @@
   "reviews": 287,
   "amazonUrl": "https://www.amazon.in/s?k=APS+Majeste+White+Oud+Eau+de+Parfum",
   "image": "/images/products/white-oud-eau-de-parfum.jpg",
-  "myntraUrl": "https://www.myntra.com/aps-majeste?rawQuery=aps%20majeste%20white%20oud"
+  "myntraUrl": "https://www.myntra.com/aps-majeste?rawQuery=aps%20majeste%20white%20oud",
+  "gender": "unisex"
 }

@@ -78,6 +78,17 @@ collections:
         options:
           - { label: "Face Wash", value: "face-wash" }
           - { label: "Perfume / Fragrance", value: "perfumes" }
+      - name: "gender"
+        label: "Gender (perfumes only)"
+        widget: "select"
+        required: false
+        default: ""
+        hint: "Only set for perfumes. Leave empty for face washes. Controls the gender filter shown when 'Perfumes' is selected on the products page."
+        options:
+          - { label: "None / Not applicable (face wash)", value: "" }
+          - { label: "For Men", value: "male" }
+          - { label: "For Women", value: "female" }
+          - { label: "Unisex", value: "unisex" }
       - { name: "size", label: "Size", widget: "string", hint: "e.g. 150 ml, 50 ml" }
       - name: "tag"
         label: "Badge / Tag"

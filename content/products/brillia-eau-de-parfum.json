@@ -31,7 +31,9 @@
   ],
   "rating": 4.8,
   "reviews": 178,
-  "amazonUrl": "https://www.amazon.in/s?k=APS+Majeste+Brillia+Eau+de+Parfum",
+  "amazonUrl": "https://www.amazon.in/dp/B0F4DD84C7",
   "image": "/images/products/brillia-eau-de-parfum.jpg",
-  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-women-brillia-long-lasting-eau-de-parfum---100-ml/35572569/buy"
+  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-women-brillia-long-lasting-eau-de-parfum---100-ml/35572569/buy",
+  "gender": "female",
+  "amazonAsin": "B0F4DD84C7"
 }

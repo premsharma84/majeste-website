@@ -41,6 +41,13 @@ export const CATEGORIES = [
   { slug: 'perfumes', label: 'Perfumes' },
 ];
 
+export const GENDERS = [
+  { slug: 'all', label: 'All' },
+  { slug: 'male', label: 'For Men' },
+  { slug: 'female', label: 'For Women' },
+  { slug: 'unisex', label: 'Unisex' },
+];
+
 export function getProduct(slug) {
   return PRODUCTS.find((p) => p.slug === slug) || null;
 }
