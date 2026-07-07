@@ -105,8 +105,15 @@ collections:
       - name: "amazonUrl"
         label: "Amazon India URL"
         widget: "string"
-        required: true
-        hint: "Full Amazon.in product URL or search URL. The 'Buy on Amazon' button on the product card and detail page links here."
+        required: false
+        hint: "Full Amazon.in product URL. The 'Buy on Amazon' button on the product card and detail page links here. Leave empty to hide the Amazon button."
+
+      # Myntra purchase link
+      - name: "myntraUrl"
+        label: "Myntra URL"
+        widget: "string"
+        required: false
+        hint: "Full Myntra.com product URL. The 'Buy on Myntra' button on the product card and detail page links here. Leave empty to hide the Myntra button."
 
       # Descriptions
       - { name: "short", label: "Short description", widget: "text", hint: "One-line summary shown on the product card (max ~160 chars)" }

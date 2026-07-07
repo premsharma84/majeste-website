@@ -27,9 +27,44 @@
     "vitamin-e-b3-face-wash",
     "black-fury-eau-de-parfum"
   ],
-  "rating": 4.7,
-  "reviews": 412,
+  "rating": 5.0,
+  "reviews": 4,
   "amazonUrl": "https://www.amazon.in/dp/B0GWMPBDHK",
   "image": "/images/products/acnoshield-face-wash.jpg",
-  "amazonAsin": "B0GWMPBDHK"
+  "amazonAsin": "B0GWMPBDHK",
+  "customerReviews": [
+    {
+      "reviewer": "Nikita Agrawal",
+      "rating": 5.0,
+      "title": "Product review",
+      "body": "It is gentle on skin, removes dirt effectively and leaves face feeling fresh without dryness.",
+      "date": "28 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Jatin dhingra",
+      "rating": 5.0,
+      "title": "Excellent product 👌👌",
+      "body": "I bought it for my son and the AcnoShield Face Wash works really well for controlling acne and keeping his skin fresh without drying it out",
+      "date": "22 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Mitankshi Sharma",
+      "rating": 5.0,
+      "title": "Perfect for clear and glowing skin",
+      "body": "Loved it. It’s mild, has a pleasant fragrance, and keeps the skin feeling fresh throughout the day. A good buy overall.",
+      "date": "24 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Nehal Rathod",
+      "rating": 5.0,
+      "title": "Useful product with nice quality",
+      "body": "Very nice product.. It is giving complete freshness",
+      "date": "25 April 2026",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/face-wash-and-cleanser/apsmajeste/aps-majeste-acnoshield-face-wash---100-ml/41558892/buy"
 }

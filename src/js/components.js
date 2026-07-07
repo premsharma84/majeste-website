@@ -52,9 +52,8 @@ function renderHeader() {
     <a href="#main" class="skip-link">Skip to content</a>
     <header class="site-header" data-site-header>
       <div class="container site-header__inner">
-        <a href="${link('index.html')}" class="brand" aria-label="${SITE.brand} home">
-          <span class="brand__prefix">${SITE.brandPrefix}</span>
-          <span class="brand__main">${SITE.brandMain}</span>
+        <a href="${link('index.html')}" class="brand brand--logo" aria-label="${SITE.brand} home">
+          <img src="/images/brand/brand-logo.jpg" alt="${SITE.brand} logo" class="brand__logo-img" width="1200" height="1200" loading="eager" decoding="async">
         </a>
         <nav class="primary-nav" aria-label="Primary">
           <ul>${navItems}</ul>
@@ -83,9 +82,8 @@ function renderFooter() {
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div>
-          <a href="${link('index.html')}" class="footer-brand">
-            <span class="brand__prefix">${SITE.brandPrefix}</span>
-            <span class="brand__main">${SITE.brandMain}</span>
+          <a href="${link('index.html')}" class="footer-brand footer-brand--logo">
+            <img src="/images/brand/brand-logo.jpg" alt="${SITE.brand} logo" class="brand__logo-img brand__logo-img--footer" width="1200" height="1200" loading="lazy" decoding="async">
           </a>
           <p class="footer-tagline">${SITE.tagline}. Crafted in small batches in Udaipur, India.</p>
           <form class="footer-newsletter" data-newsletter aria-label="Newsletter signup">

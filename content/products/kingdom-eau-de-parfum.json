@@ -29,9 +29,20 @@
     "legend-eau-de-parfum",
     "vitamin-e-b3-face-wash"
   ],
-  "rating": 4.9,
-  "reviews": 156,
+  "rating": 3.5,
+  "reviews": 3,
   "amazonUrl": "https://www.amazon.in/dp/B0F4D78NJB",
   "image": "/images/products/kingdom-eau-de-parfum.jpg",
-  "amazonAsin": "B0F4D78NJB"
+  "amazonAsin": "B0F4D78NJB",
+  "customerReviews": [
+    {
+      "reviewer": "Akash",
+      "rating": 5.0,
+      "title": "Fabulous smell",
+      "body": "The perfume smell is too good gives you a awesome wibe I am much happy to buy it hard and long lasting smell",
+      "date": "28 June 2025",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-men-kingdom-eau-de-parfum---100-ml/35566070/buy"
 }

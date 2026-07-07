@@ -137,6 +137,27 @@
   gap: 0.4em;
   line-height: 1;
 }
+/* Logo image variant — used in header */
+.brand--logo {
+  align-items: center;
+  gap: 0;
+}
+.brand__logo-img {
+  height: 44px;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  display: block;
+  transition: transform var(--transition-base);
+}
+.brand--logo:hover .brand__logo-img {
+  transform: scale(1.03);
+}
+.brand__logo-img--footer {
+  height: 64px;
+  border-radius: var(--radius-md);
+}
 .brand__prefix {
   font-family: var(--font-sans);
   font-size: 0.55em;
@@ -259,9 +280,21 @@
   display: grid;
   gap: var(--space-8);
   align-items: center;
+  /* Single column — text only (hero media removed) */
+  max-width: var(--container-narrow);
+  text-align: center;
+  justify-items: center;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero__lead {
+  margin-inline: auto;
 }
 @media (min-width: 900px) {
-  .hero__inner { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-9); }
+  .hero__inner { grid-template-columns: 1fr; gap: var(--space-9); }
 }
 .hero__title {
   font-size: var(--fs-display);
@@ -284,35 +317,7 @@
   flex-wrap: wrap;
   gap: var(--space-4);
 }
-.hero__media {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: linear-gradient(160deg, #e8d9c0 0%, #c9a97d 50%, #8a6a45 100%);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero__media img {
-  /* Brand logo is square (1:1) — use contain so it preserves proportions
-     instead of cover which would crop/stretch it. */
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
-  padding: clamp(1.5rem, 4vw, 3rem);
-}
-.hero__media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 60%);
-  pointer-events: none;
-  z-index: 2;
-}
+/* Hero media removed — hero is now text-only, single column, centered. */
 .hero__badge {
   position: absolute;
   bottom: var(--space-5);
@@ -643,10 +648,11 @@
   font-size: clamp(1.5rem, 3vw, 1.9rem);
   color: var(--color-text-inverse);
   margin-bottom: var(--space-4);
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.45em;
+  display: inline-block;
   line-height: 1;
+}
+.footer-brand--logo {
+  display: inline-block;
 }
 .footer-tagline {
   color: var(--color-text-inverse-muted);
@@ -1078,3 +1084,161 @@
   transition: transform var(--transition-base);
 }
 .toast.is-visible { transform: translateX(-50%) translateY(0); }
+
+/* ---------- Customer Reviews (from Amazon) ---------- */
+.reviews-container {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+.reviews-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-7);
+}
+.reviews-summary__rating {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+.reviews-summary__stars {
+  color: var(--color-accent);
+  font-size: var(--fs-h2);
+  letter-spacing: 2px;
+}
+.reviews-summary__value {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  color: var(--color-text);
+}
+.reviews-summary__count {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.review-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.review-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.review-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+.review-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.review-card__reviewer {
+  font-weight: 600;
+  font-size: var(--fs-body);
+  color: var(--color-text);
+}
+.review-card__date {
+  font-size: var(--fs-xs);
+  color: var(--color-text-soft);
+}
+.review-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.review-card__stars {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: var(--fs-small);
+}
+.review-card__verified {
+  font-size: var(--fs-xs);
+  color: var(--color-success);
+  font-weight: 500;
+}
+.review-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: var(--lh-snug);
+}
+.review-card__body {
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  font-size: var(--fs-body);
+}
+
+.reviews-empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-8);
+  font-style: italic;
+}
+
+.reviews__cta {
+  text-align: center;
+  margin-top: var(--space-7);
+}
+
+/* Myntra buy button — Myntra brand pink/magenta */
+.btn--myntra {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.55rem 1rem;
+  font-size: var(--fs-xs);
+  background: #ff3f6c;
+  color: #fff;
+  border: 0;
+}
+.btn--myntra:hover {
+  background: #e6355c;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 63, 108, 0.3);
+}
+.btn--myntra.btn--lg {
+  padding: 1.05rem 2.25rem;
+  font-size: var(--fs-body);
+}
+
+/* Buy buttons container on product card */
+.product-card__buy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}

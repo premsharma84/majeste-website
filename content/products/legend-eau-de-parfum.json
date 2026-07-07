@@ -29,9 +29,36 @@
     "kingdom-eau-de-parfum",
     "brillia-eau-de-parfum"
   ],
-  "rating": 4.8,
-  "reviews": 203,
+  "rating": 5.0,
+  "reviews": 6,
   "amazonUrl": "https://www.amazon.in/dp/B0F4DB16WD",
   "image": "/images/products/legend-eau-de-parfum.jpg",
-  "amazonAsin": "B0F4DB16WD"
+  "amazonAsin": "B0F4DB16WD",
+  "customerReviews": [
+    {
+      "reviewer": "vaishali yadav",
+      "rating": 5.0,
+      "title": "Premium perfume",
+      "body": "Perfume 🧴 smell is too good me and my friend smell perfume smell was to good all of them love perfume smell it's stay long and hard 🤩  with its good preferences ",
+      "date": "28 June 2025",
+      "verified": true
+    },
+    {
+      "reviewer": "Gajinder kaur",
+      "rating": 5.0,
+      "title": "Long lasting",
+      "body": "Nice fragrance light enough for everyday use",
+      "date": "26 May 2025",
+      "verified": false
+    },
+    {
+      "reviewer": "Devesh Kumar",
+      "rating": 5.0,
+      "title": "A Bold, Enduring Scent",
+      "body": "APS Majeste 100 ML Eau De Parfum is a captivating fragrance that masterfully blends spicy warmth with sweet, comforting undertones. Its rich notes of exotic spices and smooth vanilla create a luxurious, masculine aroma that exudes confidence and sophistication. The long-lasting formula ensures the scent lingers for hours, making it ideal for both daytime and evening wear. Perfect for the modern man seeking a distinctive, high-quality perfume.",
+      "date": "5 June 2025",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-men-legend-long-lasting-eau-de-parfum---100-ml/35566069/buy"
 }

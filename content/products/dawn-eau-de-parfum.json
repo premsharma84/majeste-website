@@ -28,9 +28,52 @@
     "florelle-eau-de-parfum",
     "detan-face-wash"
   ],
-  "rating": 4.7,
-  "reviews": 92,
+  "rating": 4.6,
+  "reviews": 6,
   "amazonUrl": "https://www.amazon.in/dp/B0F4D76K87",
   "image": "/images/products/dawn-eau-de-parfum.jpg",
-  "amazonAsin": "B0F4D76K87"
+  "amazonAsin": "B0F4D76K87",
+  "customerReviews": [
+    {
+      "reviewer": "adarsh",
+      "rating": 5.0,
+      "title": "Fresh & Long-Lasting",
+      "body": "honestly, it smells amazing. The mix of fresh sea vibes with a warm, natural touch makes it feel classy without being overpowering. What I like most is that it actually lasts long",
+      "date": "29 September 2025",
+      "verified": true
+    },
+    {
+      "reviewer": "Farzana Hashmi",
+      "rating": 5.0,
+      "title": "Pretty good smell",
+      "body": "Pretty good smell quality is good long lasting and u feel the presence of it elegance,making it an intimate fragrance rather than one that announces itself across the room.",
+      "date": "13 October 2025",
+      "verified": false
+    },
+    {
+      "reviewer": "shrusti b.",
+      "rating": 5.0,
+      "title": "Good one.",
+      "body": "Fragrance is amazing. Affordable price and adorable packaging.",
+      "date": "29 September 2025",
+      "verified": true
+    },
+    {
+      "reviewer": "prachi",
+      "rating": 5.0,
+      "title": "amazing",
+      "body": "The long-lasting formula ensures the scent lingers for hours, making it ideal for both daytime and evening wear.",
+      "date": "3 October 2025",
+      "verified": false
+    },
+    {
+      "reviewer": "Abhinav Patel",
+      "rating": 5.0,
+      "title": "Long lasting fragrance",
+      "body": "Dawn aps majeste perfume quality very nice. Perfume taste very cool. Also very freshness. Length is too long. Warmth of nature. Use everywhere.",
+      "date": "26 September 2025",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-men-dawn-long-lasting-eau-de-parfum---100-ml/35566067/buy"
 }

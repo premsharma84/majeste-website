@@ -46,6 +46,11 @@ export function renderProductDetail() {
     ? `<a href="${product.amazonUrl}" class="btn btn--primary btn--lg btn--amazon" target="_blank" rel="noopener noreferrer">${AMAZON_ICON} Buy on Amazon</a>`
     : '';
 
+  const myntraIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:16px;height:16px"><path d="M3 3h3l5 12 5-12h3v18h-3V9l-5 12-5-12v12H3z"/></svg>';
+  const myntraBtn = product.myntraUrl
+    ? `<a href="${product.myntraUrl}" class="btn btn--primary btn--lg btn--myntra" target="_blank" rel="noopener noreferrer">${myntraIcon} Buy on Myntra</a>`
+    : '';
+
   root.innerHTML = `
     <div class="product-detail__media" aria-label="${product.name} packaging">
       ${product.image
@@ -62,6 +67,7 @@ export function renderProductDetail() {
       </ul>
       <div class="product-detail__actions">
         ${amazonBtn}
+        ${myntraBtn}
       </div>
       <div class="product-detail__tabs">
         <div class="product-detail__tab">
@@ -122,8 +128,90 @@ export function renderProductDetail() {
     }
   }
 
+  // Render customer reviews section
+  renderProductReviews(product);
+
   // Inject product JSON-LD structured data (no price — Amazon offer only)
   injectProductJsonLd(product, slug);
+}
+
+/* ---------- Customer Reviews (from Amazon) ---------- */
+function renderProductReviews(product) {
+  const reviewsRoot = document.querySelector('[data-product-reviews]');
+  if (!reviewsRoot) return;
+
+  const reviews = product.customerReviews || [];
+  const rating = product.rating;
+  const reviewCount = product.reviews || 0;
+
+  // If no reviews at all, hide the section
+  if (reviews.length === 0 && reviewCount === 0) {
+    const section = reviewsRoot.closest('section');
+    if (section) section.style.display = 'none';
+    return;
+  }
+
+  // Build rating summary
+  const stars = rating ? '★★★★★'.slice(0, Math.round(rating)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(rating)) : '';
+  const ratingSummary = rating
+    ? `<div class="reviews-summary">
+        <div class="reviews-summary__rating">
+          <span class="reviews-summary__stars">${stars}</span>
+          <span class="reviews-summary__value">${rating.toFixed(1)}</span>
+        </div>
+        <div class="reviews-summary__count">Based on ${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'} on Amazon India</div>
+      </div>`
+    : '';
+
+  // Build individual review cards
+  const reviewCards = reviews.length
+    ? reviews.map((r) => {
+        const rStars = r.rating ? '★★★★★'.slice(0, Math.round(r.rating)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(r.rating)) : '';
+        const verifiedBadge = r.verified ? '<span class="review-card__verified">✓ Verified Purchase</span>' : '';
+        const title = r.title ? `<h4 class="review-card__title">${escapeHtml(r.title)}</h4>` : '';
+        const body = r.body ? `<p class="review-card__body">${escapeHtml(r.body)}</p>` : '';
+        const date = r.date ? `<span class="review-card__date">${escapeHtml(r.date)}</span>` : '';
+        return `
+          <article class="review-card">
+            <div class="review-card__head">
+              <div class="review-card__avatar" aria-hidden="true">${escapeHtml((r.reviewer || '?').charAt(0).toUpperCase())}</div>
+              <div class="review-card__meta">
+                <div class="review-card__reviewer">${escapeHtml(r.reviewer || 'Anonymous')}</div>
+                ${date}
+              </div>
+              <div class="review-card__rating">
+                <span class="review-card__stars">${rStars}</span>
+                ${verifiedBadge}
+              </div>
+            </div>
+            ${title}
+            ${body}
+          </article>
+        `;
+      }).join('')
+    : '<p class="reviews-empty">No detailed reviews yet. Be the first to review this product on Amazon India.</p>';
+
+  reviewsRoot.innerHTML = `
+    ${ratingSummary}
+    <div class="reviews-list">
+      ${reviewCards}
+    </div>
+    ${product.amazonUrl ? `
+      <div class="reviews__cta">
+        <a href="${product.amazonUrl}" class="btn btn--amazon" target="_blank" rel="noopener noreferrer">
+          ${AMAZON_ICON} Read all reviews on Amazon
+        </a>
+      </div>
+    ` : ''}
+  `;
+}
+
+/* Escape HTML to prevent XSS from review text */
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 function injectProductJsonLd(p, slug) {
@@ -148,12 +236,32 @@ function injectProductJsonLd(p, slug) {
           ...(p.amazonAsin ? { sku: p.amazonAsin, mpn: p.amazonAsin } : {}),
         }
       : undefined,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: p.rating,
-      reviewCount: p.reviews,
-    },
+    aggregateRating:
+      p.rating && p.reviews
+        ? {
+            '@type': 'AggregateRating',
+            ratingValue: p.rating,
+            reviewCount: p.reviews,
+          }
+        : undefined,
+    // Include individual reviews in structured data for Google rich results
+    review: (p.customerReviews || []).map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.reviewer || 'Anonymous' },
+      datePublished: r.date,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      name: r.title || '',
+      reviewBody: r.body || '',
+    })),
   };
+  // Remove undefined fields
+  Object.keys(data).forEach((k) => data[k] === undefined && delete data[k]);
+  if (data.review && data.review.length === 0) delete data.review;
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.id = 'product-jsonld';

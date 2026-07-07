@@ -28,9 +28,44 @@
     "acnoshield-face-wash",
     "kingdom-eau-de-parfum"
   ],
-  "rating": 4.7,
-  "reviews": 143,
+  "rating": 5.0,
+  "reviews": 4,
   "amazonUrl": "https://www.amazon.in/dp/B0GVJR57XB",
   "image": "/images/products/vitamin-e-b3-face-wash.jpg",
-  "amazonAsin": "B0GVJR57XB"
+  "amazonAsin": "B0GVJR57XB",
+  "customerReviews": [
+    {
+      "reviewer": "Sudesh karwasara",
+      "rating": 5.0,
+      "title": "Amazing Results with Regular Use!",
+      "body": "I’ve been using APS Majeste E + B3 Clear & Glow Face Wash for a few weeks now, and I’m genuinely impressed with the results. The combination of Vitamin E and Vitamin B3 (Niacinamide) makes my skin feel clean, fresh, and hydrated after every wash. It removes excess oil and dirt effectively without making the skin feel dry or stretched.",
+      "date": "2 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Megha Paswan",
+      "rating": 5.0,
+      "title": "Nice product feel light on skin after regular use",
+      "body": "Tried APS Majeste E + B3 Clear & Glow Face Wash recently and it turned out better than expected. It cleans the face properly, especially after a long day, but doesn’t leave that dry or rough feeling behind. Skin feels normal and fresh, which is a plus point.",
+      "date": "3 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Ranu Jain",
+      "rating": 5.0,
+      "title": "Amazing result",
+      "body": "I am writing this review after using from few weeks.it's a reliable, everyday staple for sensitive and combination skin.",
+      "date": "22 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Rahul Jain",
+      "rating": 5.0,
+      "title": "Product quality is good",
+      "body": "Good product",
+      "date": "6 May 2026",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/face-wash-and-cleanser/apsmajeste/aps-majeste-vitamin-eb3-clear--glow-face-wash---100-ml/41558893/buy"
 }

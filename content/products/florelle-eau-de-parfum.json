@@ -30,9 +30,52 @@
     "coco-eau-de-parfum",
     "papaya-face-wash"
   ],
-  "rating": 4.8,
-  "reviews": 124,
+  "rating": 5.0,
+  "reviews": 6,
   "amazonUrl": "https://www.amazon.in/dp/B0DN1D58NM",
   "image": "/images/products/florelle-eau-de-parfum.jpg",
-  "amazonAsin": "B0DN1D58NM"
+  "amazonAsin": "B0DN1D58NM",
+  "customerReviews": [
+    {
+      "reviewer": "Monika",
+      "rating": 5.0,
+      "title": "Florelle",
+      "body": "Highly recommend for anyone looking for a luxurious and long lasting signature scent!! The long lasting base notes linger beautifully making it a perfect fragrance for all events.",
+      "date": "4 March 2025",
+      "verified": false
+    },
+    {
+      "reviewer": "Abhishek",
+      "rating": 5.0,
+      "title": "Must buy",
+      "body": "Long lasting fragrance. Worth buying it",
+      "date": "11 June 2025",
+      "verified": true
+    },
+    {
+      "reviewer": "Sameer pawar",
+      "rating": 5.0,
+      "title": "Good",
+      "body": " Smells amazing and really long lasting. An excellent product value for money ",
+      "date": "20 June 2025",
+      "verified": true
+    },
+    {
+      "reviewer": "Amazon Customer",
+      "rating": 5.0,
+      "title": "Refreshing",
+      "body": "Love the calming effect of the fragrance. So sweet. It lingers for days. So definitely long-lasting.",
+      "date": "1 June 2025",
+      "verified": true
+    },
+    {
+      "reviewer": "Vansh kumar",
+      "rating": 5.0,
+      "title": "🥀🌹",
+      "body": "Brought it for my friend as a gift and she absolutely liked it .. The classy bottle and that amazing fragrance is so girly approved!",
+      "date": "11 June 2025",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-women-florelle-long-lasting-eau-de-parfum---50-ml/35566075/buy"
 }

@@ -26,9 +26,52 @@
     "detan-face-wash",
     "brillia-eau-de-parfum"
   ],
-  "rating": 4.7,
-  "reviews": 256,
+  "rating": 5.0,
+  "reviews": 5,
   "amazonUrl": "https://www.amazon.in/dp/B0GP6WTT69",
   "image": "/images/products/vitamin-c-face-wash.jpg",
-  "amazonAsin": "B0GP6WTT69"
+  "amazonAsin": "B0GP6WTT69",
+  "customerReviews": [
+    {
+      "reviewer": "Chitra",
+      "rating": 5.0,
+      "title": "Gives results",
+      "body": "Works wonders. You can see results in few days. Skin gets even tone. Go for it.",
+      "date": "10 June 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Vidhi Singh",
+      "rating": 5.0,
+      "title": "Loving it!! 15 days of using it...",
+      "body": "Absolutely loving this face wash! It cleans my skin thoroughly without leaving it dry or stretched. The formula feels super gentle, foams up well, and leaves my skin feeling fresh, soft, and refreshed after every use.",
+      "date": "25 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Bhanu",
+      "rating": 5.0,
+      "title": "Nice Product",
+      "body": "APS Majeste Vitamin C Glow Face Wash is a refreshing and gentle cleanser that leaves the skin feeling clean, soft, and bright after every wash. The Vitamin C formula helps give a natural glow to the face while removing dirt, excess oil, and daily impurities effectively. It has a pleasant fragrance and creates a rich lather without making the skin feel dry or tight.",
+      "date": "12 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Soumya Verma",
+      "rating": 5.0,
+      "title": "Vitamin c face wash",
+      "body": "Really happy with this face wash! It cleanses well without making my skin feel dry or tight. The texture is gentle, it lathers nicely, and leaves my skin feeling fresh and soft after every wash. I’ve noticed my skin looks clearer and feels smoother with regular use. Also love that it feels mild on the skin and works well for daily use. Definitely worth trying!",
+      "date": "25 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "kushal",
+      "rating": 5.0,
+      "title": "Majeste Vitamin C Face Wash",
+      "body": "Good for oily skin",
+      "date": "3 May 2026",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/face-wash-and-cleanser/apsmajeste/aps-majeste-vitamin-c-glow-face-wash---100-ml/41558888/buy"
 }

@@ -26,9 +26,60 @@
     "vitamin-c-face-wash",
     "dawn-eau-de-parfum"
   ],
-  "rating": 4.6,
-  "reviews": 198,
+  "rating": 5.0,
+  "reviews": 6,
   "amazonUrl": "https://www.amazon.in/dp/B0GS8YW1GG",
   "image": "/images/products/detan-face-wash.jpg",
-  "amazonAsin": "B0GS8YW1GG"
+  "amazonAsin": "B0GS8YW1GG",
+  "customerReviews": [
+    {
+      "reviewer": "Mansi",
+      "rating": 5.0,
+      "title": "Refreshing and Effective Face Wash",
+      "body": "It’s been a week since I started using this face wash and I’m really impressed. It removes dirt and excess oil very effectively and gives an instant fresh feeling after every wash. My skin feels clean, bright, smooth, and refreshed without becoming dry.",
+      "date": "17 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Siddharth Mogra",
+      "rating": 5.0,
+      "title": "Good",
+      "body": "I’m really impressed with the APS Majeste D-Tan Face Wash! It gives excellent de-tan results and makes my skin look noticeably cleaner, brighter, and refreshed after every use. With regular use, my skin feels smooth, fresh, and visibly more even-toned — definitely a great face wash for daily tan removal and glowing skin.",
+      "date": "1 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Bhawna saini",
+      "rating": 5.0,
+      "title": "Gentle to your skin",
+      "body": "Amazing facewash with good smell, gentle to your skin and keep your skin moisturize. Best you after after coming from sunny day. Must try ....",
+      "date": "11 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "GT",
+      "rating": 5.0,
+      "title": "Gentle everyday facewash",
+      "body": "It is a really good everyday cleanser. It removes oil and dirt well without drying the skin. My face feels fresh, soft, and looks brighter after each wash. Gentle on skin and worth trying.",
+      "date": "30 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "DL",
+      "rating": 5.0,
+      "title": "Great for Tan Removal",
+      "body": "Really liked this detan face wash. It leaves my skin feeling fresh, clean, and visibly brighter after a few uses. Great for daily use and definitely worth trying 👍",
+      "date": "25 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "trija sethi",
+      "rating": 5.0,
+      "title": "Best De-Tan Face Wash",
+      "body": "Very effective face wash - Must Try.",
+      "date": "22 April 2026",
+      "verified": false
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/face-wash-and-cleanser/apsmajeste/aps-majeste-radiance-cleanse-de-tan-face-wash----100-ml-each/41558890/buy"
 }

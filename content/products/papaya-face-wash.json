@@ -25,9 +25,60 @@
     "acnoshield-face-wash",
     "florelle-eau-de-parfum"
   ],
-  "rating": 4.6,
-  "reviews": 87,
+  "rating": 5.0,
+  "reviews": 6,
   "amazonUrl": "https://www.amazon.in/dp/B0GPK83SFC",
   "image": "/images/products/papaya-face-wash.jpg",
-  "amazonAsin": "B0GPK83SFC"
+  "amazonAsin": "B0GPK83SFC",
+  "customerReviews": [
+    {
+      "reviewer": "Shubhangi Sharan",
+      "rating": 5.0,
+      "title": "Refreshing & Gentle Face Wash for Daily Use",
+      "body": "I’ve been using this papaya face wash for a while and really like it. It cleans the skin well by removing dirt and excess oil without making the face feel too dry. The fragrance is pleasant and refreshing, and the rich foam makes it easy to use. My skin feels fresh, soft, and clean after every wash. Also, it’s gentle on the skin and good for daily use. Overall, a nice budget-friendly face wash for maintaining fresh and glowing skin.",
+      "date": "9 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Shrutika",
+      "rating": 5.0,
+      "title": "Great everyday face wash",
+      "body": "I’ve got to say this…it’s a good everyday face wash if you’re looking for something simple and refreshing. It cleans well and leaves the skin feeling fresh without drying it out. The texture is nice, lathers easily, and you don’t need much product. So yeah, a 10/10 for me…does its job.",
+      "date": "26 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Vandana Singh",
+      "rating": 5.0,
+      "title": "Refreshing And Affordable Face Wash",
+      "body": "Good face wash for daily use. It removes dirt and excess oil effectively without making the skin too dry. The papaya fragrance is pleasant, and the glycerin helps keep skin soft and fresh after every wash. Affordable, travel-friendly, and suitable for normal to oily skin.",
+      "date": "23 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Ayush Singh",
+      "rating": 5.0,
+      "title": "Good for daily use",
+      "body": "Very refreshing and gentle face wash. My skin feels fresh, clean, and smooth after every use without any dryness. Good for daily use.",
+      "date": "2 May 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Aishwarya Dubey",
+      "rating": 5.0,
+      "title": "Good daily use facewash",
+      "body": "Skin feels fresh ,it doesn't make the skin feel dry.",
+      "date": "26 April 2026",
+      "verified": true
+    },
+    {
+      "reviewer": "Abhishek Dangwal",
+      "rating": 5.0,
+      "title": "Great product, must buy.",
+      "body": "I recently tried the Majeste Papaya Glow Face Wash, and it feels refreshing on the skin. The papaya-based formula helps remove dirt and excess oil effectively while leaving the face feeling clean and fresh. It creates a nice foam, rinses off easily, and doesn’t make the skin feel overly dry thanks to the glycerin content. The mild fruity fragrance is pleasant, and the packaging is compact and travel-friendly. Overall, it’s a good budget-friendly face wash for daily use, especially for oily or normal skin types.",
+      "date": "22 May 2026",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/face-wash-and-cleanser/apsmajeste/aps-majeste-papaya-glow-face-wash---100-ml/41558887/buy"
 }

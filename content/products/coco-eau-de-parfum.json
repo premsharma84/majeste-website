@@ -29,9 +29,20 @@
     "florelle-eau-de-parfum",
     "dawn-eau-de-parfum"
   ],
-  "rating": 4.7,
-  "reviews": 78,
+  "rating": 3.9,
+  "reviews": 2,
   "amazonUrl": "https://www.amazon.in/dp/B0F4DDG3SB",
   "image": "/images/products/coco-eau-de-parfum.jpg",
-  "amazonAsin": "B0F4DDG3SB"
+  "amazonAsin": "B0F4DDG3SB",
+  "customerReviews": [
+    {
+      "reviewer": "Dhamija",
+      "rating": 5.0,
+      "title": "Gorgeous",
+      "body": "Very nice quality perfume with very good fragrance and its feel very good. Perfect for gifting and the size was very good and you can carry it anywhere must have product",
+      "date": "12 June 2025",
+      "verified": true
+    }
+  ],
+  "myntraUrl": "https://www.myntra.com/perfume/apsmajeste/aps-majeste-women-coco-long-lasting-eau-de-parfum---100-ml/35572612/buy"
 }
