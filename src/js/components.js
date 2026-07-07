@@ -85,12 +85,7 @@ function renderFooter() {
           <a href="${link('index.html')}" class="footer-brand footer-brand--logo">
             <img src="/images/brand/brand-logo.jpg" alt="${SITE.brand} logo" class="brand__logo-img brand__logo-img--footer" width="1200" height="1200" loading="lazy" decoding="async">
           </a>
-          <p class="footer-tagline">${SITE.tagline}. Crafted in small batches in Udaipur, India.</p>
-          <form class="footer-newsletter" data-newsletter aria-label="Newsletter signup">
-            <label for="footer-email" class="sr-only">Email address</label>
-            <input id="footer-email" type="email" name="email" placeholder="Email for ritual notes" required>
-            <button type="submit" aria-label="Subscribe">${ICONS.arrow}</button>
-          </form>
+          <p class="footer-tagline">${SITE.tagline}. Crafted in Udaipur, India.</p>
         </div>
         <div class="footer-col">
           <h4>Products</h4>
