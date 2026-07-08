@@ -9,6 +9,7 @@ import { initReveal, initFaq, initBackToTop } from './ui.js';
 import { renderProducts, renderFeatured } from './products.js';
 import { renderProductDetail } from './product-detail.js';
 import { initHeroSlider } from './slider.js';
+import { initPartnerForm } from './partner-form.js';
 
 function init() {
   // 1. Mount shared header/footer (depends on DOM mount points)
@@ -27,6 +28,7 @@ function init() {
   initFaq();
   initHeroSlider();
   initBackToTop();
+  initPartnerForm();
 }
 
 if (document.readyState === 'loading') {

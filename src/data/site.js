@@ -10,7 +10,9 @@ export const SITE = {
   tagline: 'Look Good, Feel Confident, and Leave a Lasting Impression',
   domain: 'https://www.apsmajeste.com',
   email: 'office@apsmajeste.com',
-  phone: '+91 83067 15457',
+  phone: '+91 83067 15754',
+  phoneRaw: '+918306715754',
+  whatsapp: 'https://wa.me/918306715754',
   address: {
     line1: 'Redsky Retail Private Limited, S206, 2nd Floor, Amrti Shree',
     line2: 'Ashok Nagar, Near City Center',
@@ -21,27 +23,25 @@ export const SITE = {
   },
   social: {
     instagram: 'https://instagram.com/apsmajeste',
-    pinterest: 'https://pinterest.com/apsmajeste',
-    tiktok: 'https://tiktok.com/@apsmajeste',
+    facebook: 'https://facebook.com/apsmajeste',
+    whatsapp: 'https://wa.me/918306715754',
   },
   founded: 2019,
-  amazonStore: 'https://www.amazon.in/s?k=APS+MAJESTE',
+  amazonStore: 'https://www.amazon.in/stores/APSMajeste/page/A020038B-14E3-4ECE-91C7-F662B0771842',
+  myntraStore: 'https://www.myntra.com',
+  flipkartStore: 'https://www.flipkart.com',
+  jioMartStore: 'https://www.jiomart.com',
+  // Partner / Distributor enquiry Google Form — replace with the real URL when ready.
+  partnerFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScDEMO-REPLACE-WITH-REAL-FORM-ID/viewform?embedded=true',
+  partnerFormLink: 'https://docs.google.com/forms/d/e/1FAIpQLScDEMO-REPLACE-WITH-REAL-FORM-ID/viewform',
 };
 
 /**
  * Build a base-path-aware internal URL.
- *
- * Vite's `--base` flag rewrites asset references but NOT <a href> links,
- * so navigation links must be prefixed with import.meta.env.BASE_URL
- * to work on GitHub Pages project sites (e.g. /apsmajeste/about.html).
- *
- *   link('about.html')      → '/about.html'                (dev / user site)
- *   link('about.html')      → '/apsmajeste/about.html'     (project site)
- *   link('product.html?id=rose')  → '/apsmajeste/product.html?id=rose'
  */
 export function link(path = '') {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // strip trailing slash
-  const clean = path.replace(/^\//, ''); // strip leading slash from input
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const clean = path.replace(/^\//, '');
   return `${base}/${clean}`;
 }
 
@@ -64,6 +64,9 @@ export const FOOTER_LINKS = {
     { href: 'why-choose-us.html', label: 'Why APS MAJESTE' },
     { href: 'contact.html', label: 'Contact' },
     { href: 'products.html', label: 'Browse Products' },
+  ],
+  business: [
+    { href: 'contact.html#partner', label: 'Enquiry' },
   ],
   legal: [
     { href: 'privacy-policy.html', label: 'Privacy Policy' },

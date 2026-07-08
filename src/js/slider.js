@@ -18,7 +18,7 @@ export function initHeroSlider() {
 
   let current = 0;
   let autoRotateTimer = null;
-  const AUTO_ROTATE_MS = 3000;
+  const AUTO_ROTATE_MS = 5000;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -153,9 +153,25 @@ export function initHeroSlider() {
   // Set initial track height
   updateTrackHeight();
 
+  // Recalculate height once images finish loading — fixes incorrect height
+  // measurements that happen when the slider initializes before the
+  // hero images have loaded (a common cause of cropping/overflow).
+  slides.forEach((slide) => {
+    const img = slide.querySelector('img');
+    if (!img) return;
+    if (img.complete && img.naturalWidth > 0) {
+      updateTrackHeight();
+    } else {
+      img.addEventListener('load', updateTrackHeight, { once: true });
+      img.addEventListener('error', updateTrackHeight, { once: true });
+    }
+  });
+
   // Update height on resize
+  let resizeTimer = null;
   window.addEventListener('resize', () => {
-    updateTrackHeight();
+    if (resizeTimer) window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(updateTrackHeight, 100);
   });
 
   // Start auto-rotate
