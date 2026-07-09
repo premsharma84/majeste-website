@@ -7,11 +7,36 @@ import { PRODUCTS, getProduct } from '../data/products.js';
 import { link } from '../data/site.js';
 import { showToast } from './ui.js';
 
-/* Amazon + Myntra logos for "Buy Now" buttons */
-const AMAZON_LOGO_LG = '<img src="/images/brand/amazon-logo.svg" alt="Amazon" class="buy-logo buy-logo--lg" width="84" height="25" loading="lazy" decoding="async">';
-const MYNTRA_LOGO_LG = '<img src="/images/brand/myntra-logo.svg" alt="Myntra" class="buy-logo buy-logo--lg" width="92" height="25" loading="lazy" decoding="async">';
-const AMAZON_LOGO_SM = '<img src="/images/brand/amazon-logo.svg" alt="Amazon" class="buy-logo" width="70" height="21" loading="lazy" decoding="async">';
-const MYNTRA_LOGO_SM = '<img src="/images/brand/myntra-logo.svg" alt="Myntra" class="buy-logo" width="76" height="21" loading="lazy" decoding="async">';
+/* Amazon + Myntra logos for inline "Buy Now:" links.
+   Detail page uses slightly larger logos; cards use smaller ones. */
+const AMAZON_LOGO_LG = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo buy-now-logo--lg" width="80" height="24" loading="lazy" decoding="async">';
+const MYNTRA_LOGO_LG = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo buy-now-logo--lg" width="24" height="24" loading="lazy" decoding="async">';
+const AMAZON_LOGO_SM = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo" width="60" height="18" loading="lazy" decoding="async">';
+const MYNTRA_LOGO_SM = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo" width="18" height="18" loading="lazy" decoding="async">';
+
+/* Build the inline "Buy Now:" + clickable logos block.
+   `size` controls logo size: 'lg' for detail page, '' (default) for cards. */
+function buyNowLinks(product, size = '') {
+  const amazonLogo = size === 'lg' ? AMAZON_LOGO_LG : AMAZON_LOGO_SM;
+  const myntraLogo = size === 'lg' ? MYNTRA_LOGO_LG : MYNTRA_LOGO_SM;
+  const links = [];
+  if (product.amazonUrl) {
+    links.push(`<a href="${product.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${product.name} on Amazon">${amazonLogo}</a>`);
+  }
+  if (product.myntraUrl) {
+    links.push(`<a href="${product.myntraUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${product.name} on Myntra">${myntraLogo}</a>`);
+  }
+  if (!links.length) return '';
+  const sizeClass = size === 'lg' ? ' buy-now-inline--lg' : '';
+  return `
+    <div class="buy-now-inline${sizeClass}">
+      <span class="buy-now-inline__label">Buy Now:</span>
+      <div class="buy-now-inline__logos">
+        ${links.join('')}
+      </div>
+    </div>
+  `;
+}
 
 function getQueryId() {
   const url = new URL(window.location.href);
@@ -71,14 +96,6 @@ export function renderProductDetail() {
   const crumb = document.querySelector('[data-product-breadcrumb]');
   if (crumb) crumb.textContent = product.name;
 
-  const amazonBtn = product.amazonUrl
-    ? `<a href="${product.amazonUrl}" class="btn btn--buy btn--buy-amazon btn--lg" target="_blank" rel="noopener noreferrer">${AMAZON_LOGO_LG}<span class="buy-now-text">Buy Now</span></a>`
-    : '';
-
-  const myntraBtn = product.myntraUrl
-    ? `<a href="${product.myntraUrl}" class="btn btn--buy btn--buy-myntra btn--lg" target="_blank" rel="noopener noreferrer">${MYNTRA_LOGO_LG}<span class="buy-now-text">Buy Now</span></a>`
-    : '';
-
   root.innerHTML = `
     <div class="product-detail__media" aria-label="${product.name} packaging">
       ${product.image
@@ -101,8 +118,7 @@ export function renderProductDetail() {
         ${product.benefits.map((b) => `<li>${b}</li>`).join('')}
       </ul>
       <div class="product-detail__actions">
-        ${amazonBtn}
-        ${myntraBtn}
+        ${buyNowLinks(product, 'lg')}
       </div>
       <div class="product-detail__tabs">
         <div class="product-detail__tab">
@@ -115,7 +131,7 @@ export function renderProductDetail() {
         </div>
         <div class="product-detail__tab">
           <h3>Shipping & Availability</h3>
-          <p>Available on Amazon India with fast delivery across the country. Click "Buy on Amazon" to view current pricing, offers, and delivery options.</p>
+          <p>Available on Amazon India with fast delivery across the country. Click the Amazon logo above to view current pricing, offers, and delivery options.</p>
         </div>
       </div>
     </div>
@@ -140,12 +156,6 @@ export function renderProductDetail() {
             const genderBadge = p.gender
               ? `<span class="product-card__gender product-card__gender--${p.gender}">${genderLabel(p.gender)}</span>`
               : '';
-            const amazonBtn = p.amazonUrl
-              ? `<a href="${p.amazonUrl}" class="btn btn--buy btn--buy-amazon" target="_blank" rel="noopener noreferrer">${AMAZON_LOGO_SM}<span class="buy-now-text">Buy Now</span></a>`
-              : '';
-            const myntraBtn = p.myntraUrl
-              ? `<a href="${p.myntraUrl}" class="btn btn--buy btn--buy-myntra" target="_blank" rel="noopener noreferrer">${MYNTRA_LOGO_SM}<span class="buy-now-text">Buy Now</span></a>`
-              : '';
             return `
         <article class="product-card reveal">
           <a href="${link(`product.html?id=${p.slug}`)}" class="product-card__media" aria-label="View ${p.name}">
@@ -163,10 +173,7 @@ export function renderProductDetail() {
             <p class="product-card__desc">${p.short}</p>
             <div class="product-card__footer">
               <span class="product-card__size">${p.size}</span>
-              <div class="product-card__buy">
-                ${amazonBtn}
-                ${myntraBtn}
-              </div>
+              ${buyNowLinks(p)}
             </div>
           </div>
         </article>`;
@@ -250,9 +257,10 @@ function renderProductReviews(product) {
     </div>
     ${product.amazonUrl ? `
       <div class="reviews__cta">
-        <a href="${product.amazonUrl}" class="btn btn--buy btn--buy-amazon" target="_blank" rel="noopener noreferrer">
-          ${AMAZON_LOGO_SM}<span class="buy-now-text">Read all reviews on Amazon</span>
+        <a href="${product.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Read all reviews for ${product.name} on Amazon">
+          ${AMAZON_LOGO_SM}
         </a>
+        <span class="reviews__cta-text">Read all reviews on Amazon</span>
       </div>
     ` : ''}
   `;

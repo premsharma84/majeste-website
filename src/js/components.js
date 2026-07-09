@@ -108,7 +108,7 @@ function renderFooter() {
             <li><a href="${link('index.html')}">Home</a></li>
             <li><a href="${link('about.html')}">About Us</a></li>
             <li><a href="${link('why-choose-us.html')}">Why APS Majeste</a></li>
-            <li><a href="${link('contact.html')}">Contact</a></li>
+            <li><a href="${link('contact.html')}">Contact Us</a></li>
           </ul>
         </div>
 
@@ -156,8 +156,16 @@ function renderFooter() {
             <span>Shop on Amazon</span>
           </a>
           <a href="${SITE.myntraStore}" class="footer-shop__btn footer-shop__btn--myntra" target="_blank" rel="noopener">
-            <img src="/images/brand/myntra-logo.svg" alt="" width="80" height="24" loading="lazy">
+            <img src="/images/brand/myntra-logo.png" alt="" width="24" height="24" loading="lazy">
             <span>Shop on Myntra</span>
+          </a>
+          <a href="${SITE.flipkartStore}" class="footer-shop__btn footer-shop__btn--flipkart" target="_blank" rel="noopener">
+            <img src="/images/brand/flipkart-logo.png" alt="" width="24" height="24" loading="lazy">
+            <span>Shop on Flipkart</span>
+          </a>
+          <a href="${SITE.jioMartStore}" class="footer-shop__btn footer-shop__btn--jiomart" target="_blank" rel="noopener">
+            <img src="/images/brand/jiomart-logo.svg" alt="" width="70" height="24" loading="lazy">
+            <span>Shop on JioMart</span>
           </a>
         </div>
 

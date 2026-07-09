@@ -50,7 +50,7 @@ export const NAV_LINKS = [
   { href: 'about.html', label: 'About' },
   { href: 'products.html', label: 'Products' },
   { href: 'why-choose-us.html', label: 'Why APS MAJESTE' },
-  { href: 'contact.html', label: 'Contact' },
+  { href: 'contact.html', label: 'Contact Us' },
 ];
 
 export const FOOTER_LINKS = {
@@ -62,7 +62,7 @@ export const FOOTER_LINKS = {
   company: [
     { href: 'about.html', label: 'Our Story' },
     { href: 'why-choose-us.html', label: 'Why APS MAJESTE' },
-    { href: 'contact.html', label: 'Contact' },
+    { href: 'contact.html', label: 'Contact Us' },
     { href: 'products.html', label: 'Browse Products' },
   ],
   business: [

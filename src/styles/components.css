@@ -86,73 +86,71 @@
   font-size: var(--fs-body);
 }
 
-/* ---------- Buy Now buttons (with real Amazon / Myntra logos) ---------- */
-.btn--buy {
-  display: inline-flex;
+/* ---------- Inline "Buy Now:" + clickable logos ----------
+   Clean, premium presentation — no button containers, no colored
+   backgrounds. Inspired by Stripe / Linear / Apple product pages.
+   Pattern:  Buy Now: [Amazon logo] [Myntra logo]                */
+.buy-now-inline {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-2);
+}
+.buy-now-inline__label {
   font-family: var(--font-sans);
   font-size: var(--fs-xs);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  border-radius: 6px;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1;
   white-space: nowrap;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
-.btn--buy .buy-logo {
-  display: inline-block;
+.buy-now-inline__logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+/* Each logo link — no background, no border, no padding container */
+.buy-now-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+.buy-now-link:hover {
+  opacity: 0.65;
+  transform: translateY(-1px);
+}
+.buy-now-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.buy-now-logo {
+  display: block;
   height: 18px;
   width: auto;
-  flex-shrink: 0;
+  max-width: 90px;
+  object-fit: contain;
 }
-.btn--buy .buy-logo--lg {
-  height: 22px;
-}
-.btn--buy .buy-now-text {
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.buy-now-logo--lg {
+  height: 24px;
+  max-width: 110px;
 }
 
-/* Amazon "Buy Now" button — dark navy with orange logo */
-.btn--buy-amazon {
-  background: #131a22;
-  color: #fff;
+/* Larger variant for product detail page */
+.buy-now-inline--lg {
+  gap: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
 }
-.btn--buy-amazon:hover {
-  background: #0f1419;
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(19, 26, 34, 0.35);
-}
-.btn--buy-amazon .buy-logo {
-  /* SVG uses white text + orange smile — visible on dark navy */
-  filter: drop-shadow(0 0 1px rgba(255,255,255,0.05));
-}
-
-/* Myntra "Buy Now" button — Myntra brand pink/magenta */
-.btn--buy-myntra {
-  background: #ff3f6c;
-  color: #fff;
-}
-.btn--buy-myntra:hover {
-  background: #e6355c;
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(255, 63, 108, 0.35);
-}
-
-.btn--buy.btn--lg {
-  padding: 0.85rem 1.5rem;
+.buy-now-inline--lg .buy-now-inline__label {
   font-size: var(--fs-small);
 }
-.btn--buy.btn--lg .buy-logo { height: 22px; }
-.btn--buy.btn--lg .buy-now-text { font-size: var(--fs-body); }
 
 /* ---------- Link with arrow ---------- */
 .link-arrow {
@@ -838,6 +836,26 @@
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(255, 63, 108, 0.35);
 }
+.footer-shop__btn--flipkart {
+  background: #2874f0;
+  color: #fff;
+}
+.footer-shop__btn--flipkart:hover {
+  background: #1a5fc2;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(40, 116, 240, 0.35);
+}
+.footer-shop__btn--jiomart {
+  background: #005cb9;
+  color: #fff;
+}
+.footer-shop__btn--jiomart:hover {
+  background: #004a96;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 92, 185, 0.35);
+}
 
 .footer-bottom {
   margin-top: var(--space-4);
@@ -873,22 +891,25 @@
 }
 .footer-social svg { width: 16px; height: 16px; }
 
-/* ---------- Marketplace cards (Why Choose Us page) ---------- */
+/* ---------- Marketplace logos (Why Choose Us page) ---------- */
+/* Clean, premium logo presentation — no colored tiles, no borders.
+   Inspired by Apple / Stripe / Linear logo walls. */
 .marketplace-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6) var(--space-4);
   margin-bottom: var(--space-6);
+  align-items: center;
+  justify-items: center;
 }
 @media (min-width: 600px) {
-  .marketplace-grid { grid-template-columns: repeat(2, 1fr); }
+  .marketplace-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 900px) {
-  .marketplace-grid { grid-template-columns: repeat(4, 1fr); }
+  .marketplace-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-7) var(--space-5); }
 }
 @media (min-width: 1000px) {
   .marketplace-grid--coming-soon { grid-template-columns: repeat(5, 1fr); }
-  .marketplace-grid--coming-soon .marketplace-card { padding: 1.25rem 1rem; }
 }
 
 /* Centered variant — for grids with fewer items (e.g. 2 offline cards) */
@@ -900,78 +921,84 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 700px;
+    gap: var(--space-7);
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
   }
-  .marketplace-grid--centered .marketplace-card {
-    flex: 0 1 220px;
-  }
 }
 
+/* Each card is now just a logo — no background, no border, no shadow.
+   Logos display in their full official brand colors (no grayscale filters). */
 .marketplace-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-5) var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: transparent;
+  border: none;
+  border-radius: 0;
   text-align: center;
   text-decoration: none;
   color: var(--color-text);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  min-height: 80px;
 }
 .marketplace-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-accent-soft);
+  opacity: 0.8;
 }
+/* The logo image itself — consistent optical size, full brand colors */
 .marketplace-card__logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 100%;
-  border-radius: var(--radius-sm);
-  padding: 0 var(--space-3);
+  height: 44px;
+  width: auto;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
 }
 .marketplace-card__logo img {
+  display: block;
   width: auto;
-  height: 30px;
-  max-width: 90%;
+  height: 44px;
+  max-width: 160px;
   object-fit: contain;
+  /* No filters — official brand colors preserved, full visibility */
 }
-.marketplace-card__logo--amazon { background: #131a22; }
-.marketplace-card__logo--myntra { background: #ff3f6c; }
-.marketplace-card__logo--flipkart { background: #2874f0; }
-.marketplace-card__logo--jiomart { background: #005cb9; }
-.marketplace-card__logo--ajio { background: #2e2e2e; }
-.marketplace-card__logo--nykaa { background: #fc2779; }
-.marketplace-card__logo--blinkit { background: #0c831f; }
-.marketplace-card__logo--zepto { background: #6c2bd9; }
-.marketplace-card__logo--instamart { background: #e10073; }
-.marketplace-card__logo--dmart { background: #e4002b; }
-.marketplace-card__logo--reliance { background: #003a70; }
 
-.marketplace-card__desc {
-  font-size: var(--fs-small);
+/* Brand name label for icon-only logos (e.g. JioMart, DMart) */
+.marketplace-card__name {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
   color: var(--color-text-muted);
-  line-height: var(--lh-normal);
+  line-height: 1;
   margin: 0;
 }
 
-/* Coming Soon variant */
+/* Description text under available-now logos */
+.marketplace-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--color-text-soft);
+  line-height: var(--lh-normal);
+  margin: 0;
+  max-width: 16ch;
+}
+
+/* Coming Soon variant — logos stay full-color, just slightly dimmed via opacity */
 .marketplace-card--coming-soon {
   position: relative;
   cursor: default;
-  opacity: 0.85;
 }
 .marketplace-card--coming-soon:hover {
   transform: none;
-  box-shadow: var(--shadow-sm);
-  border-color: var(--color-border);
+  opacity: 0.9;
 }
 .marketplace-card__badge {
   display: inline-block;
@@ -982,10 +1009,14 @@
   text-transform: uppercase;
   color: var(--color-accent);
   background: var(--color-surface-alt);
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
 }
+
+/* For dark backgrounds — no filters; logos keep official colors.
+   (If a marketplace section is ever placed on a dark background,
+   ensure the logo assets have light/white variants for visibility.) */
 
 /* ---------- Google Form embed (Partner page) ---------- */
 .partner-form-embed {
@@ -1541,8 +1572,16 @@
 }
 
 .reviews__cta {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
   margin-top: var(--space-7);
+}
+.reviews__cta-text {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 /* Myntra buy button — Myntra brand pink/magenta */

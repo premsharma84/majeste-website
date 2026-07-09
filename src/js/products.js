@@ -5,20 +5,34 @@
 import { PRODUCTS, CATEGORIES, GENDERS } from '../data/products.js';
 import { link } from '../data/site.js';
 
-/* Amazon + Myntra logos for "Buy Now" buttons */
-const AMAZON_LOGO = '<img src="/images/brand/amazon-logo.svg" alt="Amazon" class="buy-logo" width="70" height="21" loading="lazy" decoding="async">';
-const MYNTRA_LOGO = '<img src="/images/brand/myntra-logo.svg" alt="Myntra" class="buy-logo" width="76" height="21" loading="lazy" decoding="async">';
+/* Inline "Buy Now:" + clickable platform logos.
+   Clean, premium presentation — no button containers. */
+const AMAZON_LOGO = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo" width="60" height="18" loading="lazy" decoding="async">';
+const MYNTRA_LOGO = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo" width="18" height="18" loading="lazy" decoding="async">';
+
+function buyNowLinks(p) {
+  const links = [];
+  if (p.amazonUrl) {
+    links.push(`<a href="${p.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${p.name} on Amazon">${AMAZON_LOGO}</a>`);
+  }
+  if (p.myntraUrl) {
+    links.push(`<a href="${p.myntraUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${p.name} on Myntra">${MYNTRA_LOGO}</a>`);
+  }
+  if (!links.length) return '';
+  return `
+    <div class="buy-now-inline">
+      <span class="buy-now-inline__label">Buy Now:</span>
+      <div class="buy-now-inline__logos">
+        ${links.join('')}
+      </div>
+    </div>
+  `;
+}
 
 function productCard(p) {
   const tag = p.tag ? `<span class="product-card__tag">${p.tag}</span>` : '';
   const genderBadge = p.gender
     ? `<span class="product-card__gender product-card__gender--${p.gender}">${genderLabel(p.gender)}</span>`
-    : '';
-  const amazonBtn = p.amazonUrl
-    ? `<a href="${p.amazonUrl}" class="btn btn--buy btn--buy-amazon" target="_blank" rel="noopener noreferrer">${AMAZON_LOGO}<span class="buy-now-text">Buy Now</span></a>`
-    : '';
-  const myntraBtn = p.myntraUrl
-    ? `<a href="${p.myntraUrl}" class="btn btn--buy btn--buy-myntra" target="_blank" rel="noopener noreferrer">${MYNTRA_LOGO}<span class="buy-now-text">Buy Now</span></a>`
     : '';
   return `
     <article class="product-card reveal" data-category="${p.categorySlug}" data-gender="${p.gender || ''}">
@@ -38,10 +52,7 @@ function productCard(p) {
         <p class="product-card__desc">${p.short}</p>
         <div class="product-card__footer">
           <span class="product-card__size">${p.size}</span>
-          <div class="product-card__buy">
-            ${amazonBtn}
-            ${myntraBtn}
-          </div>
+          ${buyNowLinks(p)}
         </div>
       </div>
     </article>
