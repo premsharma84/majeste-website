@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" role="img" aria-label="DMart">
+  <!-- DMart logo: red rounded square with white "D", followed by "Mart" wordmark in red -->
+  <rect x="0" y="2" width="52" height="52" rx="6" ry="6" fill="#E4001B"/>
+  <text x="26" y="42" text-anchor="middle"
+        font-family="'Arial Black', 'Helvetica', sans-serif"
+        font-size="40" font-weight="900" fill="#FFFFFF">D</text>
+  <text x="62" y="42"
+        font-family="'Arial Black', 'Helvetica', sans-serif"
+        font-size="34" font-weight="900" fill="#E4001B" letter-spacing="0.5">Mart</text>
+</svg>

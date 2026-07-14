@@ -8,11 +8,12 @@ import { link } from '../data/site.js';
 import { showToast } from './ui.js';
 
 /* Amazon + Myntra logos for inline "Buy Now:" links.
-   Detail page uses slightly larger logos; cards use smaller ones. */
+   Detail page uses slightly larger logos; cards use smaller ones.
+   Order: Myntra first, then Amazon (per brand preference). */
+const MYNTRA_LOGO_LG = '<img src="/images/brand/myntra-logo.svg" alt="Buy on Myntra" class="buy-now-logo buy-now-logo--lg" width="90" height="28" loading="lazy" decoding="async">';
 const AMAZON_LOGO_LG = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo buy-now-logo--lg" width="80" height="24" loading="lazy" decoding="async">';
-const MYNTRA_LOGO_LG = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo buy-now-logo--lg" width="24" height="24" loading="lazy" decoding="async">';
+const MYNTRA_LOGO_SM = '<img src="/images/brand/myntra-logo.svg" alt="Buy on Myntra" class="buy-now-logo" width="70" height="22" loading="lazy" decoding="async">';
 const AMAZON_LOGO_SM = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo" width="60" height="18" loading="lazy" decoding="async">';
-const MYNTRA_LOGO_SM = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo" width="18" height="18" loading="lazy" decoding="async">';
 
 /* Build the inline "Buy Now:" + clickable logos block.
    `size` controls logo size: 'lg' for detail page, '' (default) for cards. */
@@ -20,11 +21,11 @@ function buyNowLinks(product, size = '') {
   const amazonLogo = size === 'lg' ? AMAZON_LOGO_LG : AMAZON_LOGO_SM;
   const myntraLogo = size === 'lg' ? MYNTRA_LOGO_LG : MYNTRA_LOGO_SM;
   const links = [];
-  if (product.amazonUrl) {
-    links.push(`<a href="${product.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${product.name} on Amazon">${amazonLogo}</a>`);
-  }
   if (product.myntraUrl) {
     links.push(`<a href="${product.myntraUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${product.name} on Myntra">${myntraLogo}</a>`);
+  }
+  if (product.amazonUrl) {
+    links.push(`<a href="${product.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${product.name} on Amazon">${amazonLogo}</a>`);
   }
   if (!links.length) return '';
   const sizeClass = size === 'lg' ? ' buy-now-inline--lg' : '';
@@ -128,10 +129,6 @@ export function renderProductDetail() {
         <div class="product-detail__tab">
           <h3>How to Use</h3>
           <p>${product.usage}</p>
-        </div>
-        <div class="product-detail__tab">
-          <h3>Shipping & Availability</h3>
-          <p>Available on Amazon India with fast delivery across the country. Click the Amazon logo above to view current pricing, offers, and delivery options.</p>
         </div>
       </div>
     </div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" role="img" aria-label="Myntra">
+  <!-- Myntra wordmark — official brand color #FF3F6C -->
+  <text x="100" y="40" text-anchor="middle"
+        font-family="'Trebuchet MS', 'Segoe UI', Verdana, Helvetica, sans-serif"
+        font-size="38" font-weight="700" font-style="italic"
+        fill="#FF3F6C" letter-spacing="-0.5">myntra</text>
+</svg>

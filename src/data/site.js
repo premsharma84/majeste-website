@@ -31,9 +31,9 @@ export const SITE = {
   myntraStore: 'https://www.myntra.com',
   flipkartStore: 'https://www.flipkart.com',
   jioMartStore: 'https://www.jiomart.com',
-  // Partner / Distributor enquiry Google Form — replace with the real URL when ready.
-  partnerFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScDEMO-REPLACE-WITH-REAL-FORM-ID/viewform?embedded=true',
-  partnerFormLink: 'https://docs.google.com/forms/d/e/1FAIpQLScDEMO-REPLACE-WITH-REAL-FORM-ID/viewform',
+  // Partner / Distributor / Retailer / Modern Trade / Bulk & Corporate enquiry Google Form.
+  partnerFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfK2-p8kjsHyZ4d9K6aC_92kJdB04Z78jp2HMDvWwdPSLO85Q/viewform?embedded=true',
+  partnerFormLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfK2-p8kjsHyZ4d9K6aC_92kJdB04Z78jp2HMDvWwdPSLO85Q/viewform?usp=dialog',
 };
 
 /**

@@ -6,17 +6,18 @@ import { PRODUCTS, CATEGORIES, GENDERS } from '../data/products.js';
 import { link } from '../data/site.js';
 
 /* Inline "Buy Now:" + clickable platform logos.
-   Clean, premium presentation — no button containers. */
+   Clean, premium presentation — no button containers.
+   Order: Myntra first, then Amazon (per brand preference). */
+const MYNTRA_LOGO = '<img src="/images/brand/myntra-logo.svg" alt="Buy on Myntra" class="buy-now-logo" width="70" height="22" loading="lazy" decoding="async">';
 const AMAZON_LOGO = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo" width="60" height="18" loading="lazy" decoding="async">';
-const MYNTRA_LOGO = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo" width="18" height="18" loading="lazy" decoding="async">';
 
 function buyNowLinks(p) {
   const links = [];
-  if (p.amazonUrl) {
-    links.push(`<a href="${p.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${p.name} on Amazon">${AMAZON_LOGO}</a>`);
-  }
   if (p.myntraUrl) {
     links.push(`<a href="${p.myntraUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${p.name} on Myntra">${MYNTRA_LOGO}</a>`);
+  }
+  if (p.amazonUrl) {
+    links.push(`<a href="${p.amazonUrl}" class="buy-now-link" target="_blank" rel="noopener noreferrer" aria-label="Buy ${p.name} on Amazon">${AMAZON_LOGO}</a>`);
   }
   if (!links.length) return '';
   return `
