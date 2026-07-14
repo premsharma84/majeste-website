@@ -8,7 +8,7 @@ import { link } from '../data/site.js';
 /* Inline "Buy Now:" + clickable platform logos.
    Clean, premium presentation — no button containers.
    Order: Myntra first, then Amazon (per brand preference). */
-const MYNTRA_LOGO = '<img src="/images/brand/myntra-logo.svg" alt="Buy on Myntra" class="buy-now-logo" width="70" height="22" loading="lazy" decoding="async">';
+const MYNTRA_LOGO = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo" width="70" height="22" loading="lazy" decoding="async">';
 const AMAZON_LOGO = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo" width="60" height="18" loading="lazy" decoding="async">';
 
 function buyNowLinks(p) {

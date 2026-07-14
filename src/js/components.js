@@ -156,7 +156,7 @@ function renderFooter() {
             <span>Shop on Amazon</span>
           </a>
           <a href="${SITE.myntraStore}" class="footer-shop__btn footer-shop__btn--myntra" target="_blank" rel="noopener">
-            <img src="/images/brand/myntra-logo.svg" alt="" width="70" height="22" loading="lazy">
+            <img src="/images/brand/myntra-logo.png" alt="" width="70" height="22" loading="lazy">
             <span>Shop on Myntra</span>
           </a>
           <a href="${SITE.flipkartStore}" class="footer-shop__btn footer-shop__btn--flipkart" target="_blank" rel="noopener">

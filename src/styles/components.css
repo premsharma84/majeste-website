@@ -831,45 +831,23 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
 .footer-shop__btn img { height: 18px; width: auto; display: block; }
-.footer-shop__btn--amazon {
-  background: #131a22;
-  color: #fff;
-}
-.footer-shop__btn--amazon:hover {
-  background: #0f1419;
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(19, 26, 34, 0.35);
-}
-.footer-shop__btn--myntra {
-  background: #ff3f6c;
-  color: #fff;
-}
-.footer-shop__btn--myntra:hover {
-  background: #e6355c;
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(255, 63, 108, 0.35);
-}
-.footer-shop__btn--flipkart {
+/* All four shop buttons share the same blue background for visual consistency.
+   Each logo keeps its official brand colors on top of the unified blue chip. */
+.footer-shop__btn--amazon,
+.footer-shop__btn--myntra,
+.footer-shop__btn--flipkart,
+.footer-shop__btn--jiomart {
   background: #2874f0;
   color: #fff;
 }
-.footer-shop__btn--flipkart:hover {
+.footer-shop__btn--amazon:hover,
+.footer-shop__btn--myntra:hover,
+.footer-shop__btn--flipkart:hover,
+.footer-shop__btn--jiomart:hover {
   background: #1a5fc2;
   color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(40, 116, 240, 0.35);
-}
-.footer-shop__btn--jiomart {
-  background: #005cb9;
-  color: #fff;
-}
-.footer-shop__btn--jiomart:hover {
-  background: #004a96;
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 92, 185, 0.35);
 }
 
 .footer-bottom {

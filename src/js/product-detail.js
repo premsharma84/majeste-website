@@ -10,9 +10,9 @@ import { showToast } from './ui.js';
 /* Amazon + Myntra logos for inline "Buy Now:" links.
    Detail page uses slightly larger logos; cards use smaller ones.
    Order: Myntra first, then Amazon (per brand preference). */
-const MYNTRA_LOGO_LG = '<img src="/images/brand/myntra-logo.svg" alt="Buy on Myntra" class="buy-now-logo buy-now-logo--lg" width="90" height="28" loading="lazy" decoding="async">';
+const MYNTRA_LOGO_LG = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo buy-now-logo--lg" width="90" height="57" loading="lazy" decoding="async">';
 const AMAZON_LOGO_LG = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo buy-now-logo--lg" width="80" height="24" loading="lazy" decoding="async">';
-const MYNTRA_LOGO_SM = '<img src="/images/brand/myntra-logo.svg" alt="Buy on Myntra" class="buy-now-logo" width="70" height="22" loading="lazy" decoding="async">';
+const MYNTRA_LOGO_SM = '<img src="/images/brand/myntra-logo.png" alt="Buy on Myntra" class="buy-now-logo" width="56" height="36" loading="lazy" decoding="async">';
 const AMAZON_LOGO_SM = '<img src="/images/brand/amazon-logo.svg" alt="Buy on Amazon" class="buy-now-logo" width="60" height="18" loading="lazy" decoding="async">';
 
 /* Build the inline "Buy Now:" + clickable logos block.
