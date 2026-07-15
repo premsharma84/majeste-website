@@ -91,7 +91,7 @@ export function renderProductDetail() {
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc) ogDesc.setAttribute('content', product.short);
   const canonical = document.querySelector('link[rel="canonical"]');
-  if (canonical) canonical.setAttribute('href', `https://apsmajeste.in/product.html?id=${slug}`);
+  if (canonical) canonical.setAttribute('href', `https://www.apsmajeste.com/product.html?id=${slug}`);
 
   // Breadcrumb
   const crumb = document.querySelector('[data-product-breadcrumb]');
@@ -288,8 +288,8 @@ function injectProductJsonLd(p, slug) {
     category: p.category,
     brand: { '@type': 'Brand', name: 'APS MAJESTE' },
     productID: slug,
-    url: `https://apsmajeste.in/product.html?id=${slug}`,
-    image: `https://apsmajeste.in/images/products/${slug}.jpg`,
+    url: `https://www.apsmajeste.com/product.html?id=${slug}`,
+    image: `https://www.apsmajeste.com/images/products/${slug}.jpg`,
     offers: p.amazonUrl
       ? {
           '@type': 'Offer',

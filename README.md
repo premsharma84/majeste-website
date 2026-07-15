@@ -343,10 +343,10 @@ The workflow also runs a build check on pull requests (without deploying) so you
 
 - Replace placeholder contact details in `src/data/site.js` and `content/settings/site.json` with your real values before going live (email, phone, address, social handles).
 - Replace placeholder Amazon search URLs in `content/products/*.json` with your actual Amazon India product URLs or affiliate links.
-- The `og:image` references `https://apsmajeste.in/images/og-cover.jpg` — create and upload this 1200×630 image before launch.
+- The `og:image` references `https://www.apsmajeste.com/images/og-cover.jpg` — create and upload this 1200×630 image before launch.
 - The contact + newsletter forms are front-end only and show a toast on submit. Wire them to Formspree, Netlify Forms, or your email service when ready.
 - Product imagery uses CSS gradient placeholders. Drop real product photography into `public/images/` and swap the `<div class="ph …">` blocks in `src/js/products.js` and `src/js/product-detail.js` for `<img loading="lazy">` tags.
-- Domain `apsmajeste.in` is a placeholder — replace with your real domain in `src/data/site.js`, `public/sitemap.xml`, `public/robots.txt`, and all JSON-LD schema blocks before launch.
+- Domain `www.apsmajeste.com` is a placeholder — replace with your real domain in `src/data/site.js`, `public/sitemap.xml`, `public/robots.txt`, and all JSON-LD schema blocks before launch.
 
 ---
 
