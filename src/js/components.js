@@ -57,7 +57,7 @@ function renderHeader() {
     <header class="site-header" data-site-header>
       <div class="container site-header__inner">
         <a href="${link('index.html')}" class="brand brand--logo" aria-label="${SITE.brand} — home">
-          <img src="/images/brand/brand-logo.png" alt="${SITE.brand} logo" class="brand__logo-img" width="1050" height="764" loading="eager" decoding="async">
+          <img src="/images/brand/brand-logo.jpg" alt="${SITE.brand} logo" class="brand__logo-img" width="512" height="512" loading="eager" decoding="async">
         </a>
         <nav class="primary-nav" aria-label="Primary">
           <ul>${navItems}</ul>
@@ -91,7 +91,7 @@ function renderFooter() {
       <div class="container site-footer__top">
         <div class="site-footer__brand">
           <a href="${link('index.html')}" class="footer-brand footer-brand--logo" aria-label="${SITE.brand} — home">
-            <img src="/images/brand/brand-logo.png" alt="${SITE.brand} logo" class="brand__logo-img brand__logo-img--footer" width="1050" height="764" loading="lazy" decoding="async">
+            <img src="/images/brand/brand-logo.jpg" alt="${SITE.brand} logo" class="brand__logo-img brand__logo-img--footer" width="512" height="512" loading="lazy" decoding="async">
           </a>
           <p class="footer-tagline">${SITE.tagline}</p>
           <p class="footer-subtitle">Premium Fragrance &amp; Skincare · Affordable Luxury for Every Indian</p>
