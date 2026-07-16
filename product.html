@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Dynamic per-product meta is set by JS based on ?id= -->
+  <!-- Per-product meta tags set immediately (before Googlebot crawl) via inline script.
+       Falls back to generic defaults if no ?id= or product not found. -->
   <title>Product — APS MAJESTE</title>
   <meta name="description" content="Discover this small-batch APS MAJESTE formula — clinically tested, hand-blended in Udaipur, and signed by its maker. Full ingredients, benefits, and usage.">
   <meta name="keywords" content="APS MAJESTE product, luxury skincare, botanical skincare, small batch, Udaipur">
@@ -24,6 +25,42 @@
   <meta name="twitter:title" content="Product — APS MAJESTE">
   <meta name="twitter:description" content="Small-batch APS MAJESTE formula — clinically tested, hand-blended in Udaipur.">
   <meta name="twitter:image" content="https://www.apsmajeste.com/images/og-cover.jpg">
+
+  <script>
+  (function(){
+    var m={
+      'acnoshield-face-wash':{n:'AcnoShield Face Wash',c:'Face Wash',d:'A clarifying acne-control face wash with salicylic acid, niacinamide, and AHA+BHA to unclog pores and reduce oil.'},
+      'detan-face-wash':{n:'De-Tan Radiance Cleanse Face Wash',c:'Face Wash',d:'A de-tan face wash with saffron, aloe, and an AHA+BHA blend to remove sun-induced dullness and brighten skin.'},
+      'papaya-face-wash':{n:'Papaya Glow Face Wash',c:'Face Wash',d:'A paraben-free papaya face wash with glycerin that removes dirt and oil while leaving skin fresh, balanced, and glowing.'},
+      'vitamin-c-face-wash':{n:'Vitamin C Glow Face Wash',c:'Face Wash',d:'A brightening Vitamin C face wash with black turmeric, lemon extract, and niacinamide for an even, radiant tone.'},
+      'vitamin-e-b3-face-wash':{n:'Vitamin E+B3 Clear \u0026 Glow Face Wash',c:'Face Wash',d:'A clarifying face wash with Vitamin E, niacinamide, and AHA+BHA to unclog pores, fight acne, and brighten skin.'},
+      'black-fury-eau-de-parfum':{n:'Black Fury Eau de Parfum',c:'Perfume',d:'A bold, smoky eau de parfum with an intense sillage \u2014 designed for evenings that demand to be remembered.'},
+      'brillia-eau-de-parfum':{n:'Brillia Eau de Parfum',c:'Perfume',d:'A luminous amber eau de parfum that exudes sophistication and timeless elegance.'},
+      'coco-eau-de-parfum':{n:'Coco Eau de Parfum',c:'Perfume',d:'A warm, gourmand eau de parfum weaving coconut, vanilla, and warm spices into a cozy, irresistible signature.'},
+      'dawn-eau-de-parfum':{n:'Dawn Eau de Parfum',c:'Perfume',d:'A serene floral-amber eau de parfum capturing the soft, hopeful beauty of dawn in 100ml.'},
+      'destiny-eau-de-parfum':{n:'Destiny Eau de Parfum',c:'Perfume',d:'A green, aromatic eau de parfum capturing destiny\u0027s essence with rich, timeless notes.'},
+      'florelle-eau-de-parfum':{n:'Florelle Eau de Parfum',c:'Perfume',d:'An opulent floral bouquet eau de parfum that captivates with rich, sophisticated notes.'},
+      'hocco-eau-de-parfum':{n:'Hocco Eau de Parfum',c:'Perfume',d:'A sophisticated eau de parfum blending modern elegance with timeless depth in 100ml.'},
+      'kingdom-eau-de-parfum':{n:'Kingdom Eau de Parfum',c:'Perfume',d:'A regal eau de parfum embodying sophistication and timeless allure.'},
+      'legend-eau-de-parfum':{n:'Legend Eau de Parfum',c:'Perfume',d:'A timeless amber eau de parfum with a refined, confident character.'},
+      'white-oud-eau-de-parfum':{n:'White Oud Eau de Parfum',c:'Perfume',d:'A luminous oud eau de parfum blending rich Indian oud with subtle white florals for an opulent, long-lasting fragrance.'}
+    };
+    var q=(window.location.search||'').match(/[?&]id=([^&]+)/);
+    var s=q?q[1]:'';
+    var p=m[s];
+    if(!p)return;
+    var t=p.n+' \u2014 '+p.c+' | APS MAJESTE';
+    var u='https://www.apsmajeste.com/product.html?id='+encodeURIComponent(s);
+    document.title=t;
+    var d=document.querySelector('meta[name="description"]');if(d)d.setAttribute('content',p.d);
+    var c=document.querySelector('link[rel="canonical"]');if(c)c.setAttribute('href',u);
+    var ogt=document.querySelector('meta[property="og:title"]');if(ogt)ogt.setAttribute('content',p.n+' | APS MAJESTE');
+    var ogd=document.querySelector('meta[property="og:description"]');if(ogd)ogd.setAttribute('content',p.d);
+    var ogu=document.querySelector('meta[property="og:url"]');if(ogu)ogu.setAttribute('content',u);
+    var twt=document.querySelector('meta[name="twitter:title"]');if(twt)twt.setAttribute('content',p.n+' | APS MAJESTE');
+    var twd=document.querySelector('meta[name="twitter:description"]');if(twd)twd.setAttribute('content',p.d);
+  })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
